@@ -1,0 +1,5 @@
+/.quarto/
+/exsol-output/
+/tikz/
+/_pruebas.qmd
+**/*.quarto_ipynb

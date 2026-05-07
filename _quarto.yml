@@ -1,0 +1,16 @@
+title: 'Tema 7: Algunas visualizaciones'
+project: 
+  output-dir: docs
+format: 
+  live-html: # quarto add r-wasm/quarto-live
+    theme: cosmo
+    # code-copy: false
+    toc: true
+lang: es
+engine: jupyter
+filters: 
+  - quizdown # quarto add parmsam/quarto-quizdown
+pyodide:
+  packages:
+    - plotly
+    - nbformat

@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Tema 7: Algunas visualizaciones</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="index_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="index_files/libs/quarto-html/popper.min.js"></script>
+<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="index_files/libs/quarto-html/anchor.min.js"></script>
+<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="index_files/libs/bootstrap/bootstrap-7cfade01a95d1e47d0f2a0033f732fe3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="index_files/libs/quarto-contrib/quizdown-0.6.0/quizdown.js"></script>
+<script src="index_files/libs/quarto-contrib/quizdown-0.6.0/quizdownKatex.js"></script>
+<script src="index_files/libs/quarto-contrib/quizdown-0.6.0/quizdownHighlight.js"></script>
+<script src="index_files/libs/quarto-contrib/quizdown-0.6.0/quizdown-init.js"></script>
+<script src="index_files/libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
+<link href="index_files/libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
+<script type="module" src="index_files/libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="index_files/libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Tabla de contenidos</h2>
+   
+  <ul>
+  <li><a href="#problema-7" id="toc-problema-7" class="nav-link active" data-scroll-target="#problema-7">Problema 7</a></li>
+  <li><a href="#problema-20-a" id="toc-problema-20-a" class="nav-link" data-scroll-target="#problema-20-a">Problema 20 (a)</a>
+  <ul class="collapse">
+  <li><a href="#comparativa-de-primera-y-segunda-opción" id="toc-comparativa-de-primera-y-segunda-opción" class="nav-link" data-scroll-target="#comparativa-de-primera-y-segunda-opción">Comparativa de primera y segunda opción</a></li>
+  <li><a href="#tercera-opción" id="toc-tercera-opción" class="nav-link" data-scroll-target="#tercera-opción">Tercera opción</a></li>
+  </ul></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Tema 7: Algunas visualizaciones</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<!-- https://gemini.google.com/gem/98767edddd13/85b91813a40b391f -->
+<p>En este documento encontrarás algunas visualizaciones que pueden resultarte útiles para interpretar los resultados de algunos problemas.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="6" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 5;"><span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>d3 <span class="op">=</span> <span class="pp">require</span>(<span class="st">"d3@7"</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>jstat <span class="op">=</span> <span class="pp">require</span>(<span class="st">"jstat@1.9.6"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<section id="problema-7" class="level2">
+<h2 class="anchored" data-anchor-id="problema-7">Problema 7</h2>
+<p>La siguiente visualización permite comparar las probabilidades de que Ana llegue tarde para diferentes valores de la correlación entre <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span>.</p>
+<p>La gráfica gris con línea discontinua se corresponde con el caso de correlación <span class="math inline">\(0\)</span> (apartado (a)) para referencia.</p>
+<p>La gráfica azul muestra inicialmente el caso de correlación <span class="math inline">\(0.5\)</span> (apartado (b)). Puedes utilizar el deslizador para modificarla.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="21" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 20;"><span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>viewof rho_dynamic <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="op">-</span><span class="fl">0.8</span><span class="op">,</span><span class="fl">0.8</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="fl">0.5</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Correlación entre X e Y"</span>})</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb3" data-startfrom="28" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 27;"><span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>viewof umbral <span class="op">=</span> {</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>  <span class="co">// --- CONFIGURACIÓN DEL LIENZO ---</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> width <span class="op">=</span> <span class="dv">700</span><span class="op">;</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> height <span class="op">=</span> <span class="dv">400</span><span class="op">;</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> margin <span class="op">=</span> {<span class="dt">top</span><span class="op">:</span> <span class="dv">40</span><span class="op">,</span> <span class="dt">right</span><span class="op">:</span> <span class="dv">30</span><span class="op">,</span> <span class="dt">bottom</span><span class="op">:</span> <span class="dv">40</span><span class="op">,</span> <span class="dt">left</span><span class="op">:</span> <span class="dv">50</span>}<span class="op">;</span> </span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Parámetros estadísticos</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> mu <span class="op">=</span> <span class="dv">45</span><span class="op">;</span></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> sigma_fixed <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> sigma_dynamic <span class="op">=</span> (<span class="dv">25</span> <span class="op">+</span> <span class="dv">24</span><span class="op">*</span>rho_dynamic)<span class="op">**</span><span class="fl">0.5</span><span class="op">;</span></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> x_min <span class="op">=</span> <span class="dv">30</span><span class="op">;</span></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> x_max <span class="op">=</span> <span class="dv">60</span><span class="op">;</span></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> x_domain <span class="op">=</span> [x_min<span class="op">,</span> x_max]<span class="op">;</span></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> y_max <span class="op">=</span> <span class="fl">0.18</span><span class="op">;</span></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> y_domain <span class="op">=</span> [<span class="dv">0</span><span class="op">,</span> y_max]<span class="op">;</span></span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Escalas de D3</span></span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> x <span class="op">=</span> d3<span class="op">.</span><span class="fu">scaleLinear</span>()<span class="op">.</span><span class="fu">domain</span>(x_domain)<span class="op">.</span><span class="fu">range</span>([margin<span class="op">.</span><span class="at">left</span><span class="op">,</span> width <span class="op">-</span> margin<span class="op">.</span><span class="at">right</span>])<span class="op">;</span></span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> y <span class="op">=</span> d3<span class="op">.</span><span class="fu">scaleLinear</span>()<span class="op">.</span><span class="fu">domain</span>(y_domain)<span class="op">.</span><span class="fu">range</span>([height <span class="op">-</span> margin<span class="op">.</span><span class="at">bottom</span><span class="op">,</span> margin<span class="op">.</span><span class="at">top</span>])<span class="op">;</span></span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Funciones Matemáticas</span></span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> pdf <span class="op">=</span> (val<span class="op">,</span> m<span class="op">,</span> s) <span class="kw">=&gt;</span> (<span class="dv">1</span> <span class="op">/</span> (s <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">sqrt</span>(<span class="dv">2</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span>))) <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">exp</span>(<span class="op">-</span><span class="fl">0.5</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">pow</span>((val <span class="op">-</span> m) <span class="op">/</span> s<span class="op">,</span> <span class="dv">2</span>))<span class="op">;</span></span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> data_range <span class="op">=</span> d3<span class="op">.</span><span class="fu">range</span>(x_domain[<span class="dv">0</span>]<span class="op">,</span> x_domain[<span class="dv">1</span>]<span class="op">,</span> <span class="fl">0.1</span>)<span class="op">;</span></span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>  <span class="co">// --- CREACIÓN DEL SVG ---</span></span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> svg <span class="op">=</span> d3<span class="op">.</span><span class="fu">create</span>(<span class="st">"svg"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"viewBox"</span><span class="op">,</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> width<span class="op">,</span> height])<span class="op">.</span><span class="fu">style</span>(<span class="st">"background"</span><span class="op">,</span> <span class="st">"white"</span>)<span class="op">.</span><span class="fu">style</span>(<span class="st">"border"</span><span class="op">,</span> <span class="st">"1px solid #eee"</span>)<span class="op">;</span></span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Ejes</span></span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"g"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"transform"</span><span class="op">,</span> <span class="vs">`translate(0,</span><span class="sc">${</span>height <span class="op">-</span> margin<span class="op">.</span><span class="at">bottom</span><span class="sc">}</span><span class="vs">)`</span>)<span class="op">.</span><span class="fu">call</span>(d3<span class="op">.</span><span class="fu">axisBottom</span>(x))<span class="op">;</span></span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"g"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"transform"</span><span class="op">,</span> <span class="vs">`translate(</span><span class="sc">${</span>margin<span class="op">.</span><span class="at">left</span><span class="sc">}</span><span class="vs">,0)`</span>)<span class="op">.</span><span class="fu">call</span>(d3<span class="op">.</span><span class="fu">axisLeft</span>(y))<span class="op">;</span></span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Título</span></span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"text"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"x"</span><span class="op">,</span> width<span class="op">/</span><span class="dv">2</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"y"</span><span class="op">,</span> <span class="dv">25</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"text-anchor"</span><span class="op">,</span> <span class="st">"middle"</span>)<span class="op">.</span><span class="fu">style</span>(<span class="st">"font-weight"</span><span class="op">,</span> <span class="st">"bold"</span>)<span class="op">.</span><span class="fu">text</span>(<span class="st">"Comparativa de correlación 0 y la correlación elegida"</span>)<span class="op">;</span></span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a>  <span class="co">// 1. PDF Fija y Variable</span></span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"path"</span>)<span class="op">.</span><span class="fu">datum</span>(data_range)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> <span class="st">"none"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke"</span><span class="op">,</span> <span class="st">"gray"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke-dasharray"</span><span class="op">,</span> <span class="st">"4,4"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"d"</span><span class="op">,</span> d3<span class="op">.</span><span class="fu">line</span>()<span class="op">.</span><span class="fu">x</span>(d <span class="kw">=&gt;</span> <span class="fu">x</span>(d))<span class="op">.</span><span class="fu">y</span>(d <span class="kw">=&gt;</span> <span class="fu">y</span>(<span class="fu">pdf</span>(d<span class="op">,</span> mu<span class="op">,</span> sigma_fixed))))<span class="op">;</span></span>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"path"</span>)<span class="op">.</span><span class="fu">datum</span>(data_range)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> <span class="st">"none"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke"</span><span class="op">,</span> <span class="st">"rgb(44, 133, 235)"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke-width"</span><span class="op">,</span> <span class="dv">2</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"d"</span><span class="op">,</span> d3<span class="op">.</span><span class="fu">line</span>()<span class="op">.</span><span class="fu">x</span>(d <span class="kw">=&gt;</span> <span class="fu">x</span>(d))<span class="op">.</span><span class="fu">y</span>(d <span class="kw">=&gt;</span> <span class="fu">y</span>(<span class="fu">pdf</span>(d<span class="op">,</span> mu<span class="op">,</span> sigma_dynamic))))<span class="op">;</span></span>
+<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a>  <span class="co">// 2. Contenedores para áreas (cola derecha X &gt; k)</span></span>
+<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> shade_fixed_color <span class="op">=</span> <span class="st">"rgba(128, 128, 128, 0.25)"</span></span>
+<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> shade_fixed <span class="op">=</span> svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"path"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> shade_fixed_color)<span class="op">;</span></span>
+<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> shade_dynamic_color <span class="op">=</span> <span class="st">"rgba(44, 133, 235, 0.25)"</span><span class="op">;</span></span>
+<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> shade_dynamic <span class="op">=</span> svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"path"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> shade_dynamic_color)<span class="op">;</span></span>
+<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a>  <span class="co">// --- NUEVA LEYENDA DE PROBABILIDADES (X &gt; k) ---</span></span>
+<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> legend_x_left <span class="op">=</span> width <span class="op">-</span> margin<span class="op">.</span><span class="at">right</span> <span class="op">-</span> <span class="dv">140</span><span class="op">;</span></span>
+<span id="cb3-74"><a href="#cb3-74" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> legend_y_top <span class="op">=</span> (height <span class="op">-</span> margin<span class="op">.</span><span class="at">bottom</span>)<span class="op">/</span><span class="dv">2</span>  <span class="op">-</span> <span class="dv">35</span><span class="op">;</span></span>
+<span id="cb3-75"><a href="#cb3-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"rect"</span>)</span>
+<span id="cb3-77"><a href="#cb3-77" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x"</span><span class="op">,</span> legend_x_left)      <span class="co">// Posición horizontal</span></span>
+<span id="cb3-78"><a href="#cb3-78" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"y"</span><span class="op">,</span> legend_y_top<span class="op">-</span><span class="dv">13</span>)      <span class="co">// Posición vertical</span></span>
+<span id="cb3-79"><a href="#cb3-79" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"width"</span><span class="op">,</span> <span class="dv">13</span>)  <span class="co">// Ancho</span></span>
+<span id="cb3-80"><a href="#cb3-80" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"height"</span><span class="op">,</span> <span class="dv">13</span>) <span class="co">// Alto</span></span>
+<span id="cb3-81"><a href="#cb3-81" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">style</span>(<span class="st">"fill"</span><span class="op">,</span> shade_fixed_color)<span class="op">;</span></span>
+<span id="cb3-82"><a href="#cb3-82" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> legend_fixed <span class="op">=</span> svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"text"</span>)</span>
+<span id="cb3-83"><a href="#cb3-83" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x"</span><span class="op">,</span> legend_x_left <span class="op">+</span> <span class="dv">20</span>)</span>
+<span id="cb3-84"><a href="#cb3-84" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"y"</span><span class="op">,</span> legend_y_top)</span>
+<span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a>    <span class="co">//.attr("fill", "gray")</span></span>
+<span id="cb3-86"><a href="#cb3-86" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">style</span>(<span class="st">"font-size"</span><span class="op">,</span> <span class="st">"13px"</span>)</span>
+<span id="cb3-87"><a href="#cb3-87" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">style</span>(<span class="st">"font-weight"</span><span class="op">,</span> <span class="st">"500"</span>)<span class="op">;</span></span>
+<span id="cb3-88"><a href="#cb3-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-89"><a href="#cb3-89" aria-hidden="true" tabindex="-1"></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"rect"</span>)</span>
+<span id="cb3-90"><a href="#cb3-90" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x"</span><span class="op">,</span> legend_x_left)      <span class="co">// Posición horizontal</span></span>
+<span id="cb3-91"><a href="#cb3-91" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"y"</span><span class="op">,</span> legend_y_top <span class="op">-</span><span class="dv">13</span> <span class="op">+</span> <span class="dv">20</span>)      <span class="co">// Posición vertical</span></span>
+<span id="cb3-92"><a href="#cb3-92" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"width"</span><span class="op">,</span> <span class="dv">13</span>)  <span class="co">// Ancho</span></span>
+<span id="cb3-93"><a href="#cb3-93" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"height"</span><span class="op">,</span> <span class="dv">13</span>) <span class="co">// Alto</span></span>
+<span id="cb3-94"><a href="#cb3-94" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">style</span>(<span class="st">"fill"</span><span class="op">,</span> shade_dynamic_color)<span class="op">;</span></span>
+<span id="cb3-95"><a href="#cb3-95" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> legend_dynamic <span class="op">=</span> svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"text"</span>)</span>
+<span id="cb3-96"><a href="#cb3-96" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x"</span><span class="op">,</span> legend_x_left <span class="op">+</span> <span class="dv">20</span>)</span>
+<span id="cb3-97"><a href="#cb3-97" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"y"</span><span class="op">,</span> legend_y_top <span class="op">+</span> <span class="dv">20</span>)</span>
+<span id="cb3-98"><a href="#cb3-98" aria-hidden="true" tabindex="-1"></a>    <span class="co">//.attr("fill", "blue")</span></span>
+<span id="cb3-99"><a href="#cb3-99" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">style</span>(<span class="st">"font-size"</span><span class="op">,</span> <span class="st">"13px"</span>)</span>
+<span id="cb3-100"><a href="#cb3-100" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">style</span>(<span class="st">"font-weight"</span><span class="op">,</span> <span class="st">"500"</span>)<span class="op">;</span></span>
+<span id="cb3-101"><a href="#cb3-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-102"><a href="#cb3-102" aria-hidden="true" tabindex="-1"></a>  <span class="co">// --- LÓGICA DE ACTUALIZACIÓN ---</span></span>
+<span id="cb3-103"><a href="#cb3-103" aria-hidden="true" tabindex="-1"></a>  <span class="kw">function</span> <span class="fu">update</span>(val_umbral){</span>
+<span id="cb3-104"><a href="#cb3-104" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> range_shade <span class="op">=</span> d3<span class="op">.</span><span class="fu">range</span>(val_umbral<span class="op">,</span> x_domain[<span class="dv">1</span>]<span class="op">,</span> <span class="fl">0.1</span>)<span class="op">;</span></span>
+<span id="cb3-105"><a href="#cb3-105" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-106"><a href="#cb3-106" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Actualizar áreas sombreadas</span></span>
+<span id="cb3-107"><a href="#cb3-107" aria-hidden="true" tabindex="-1"></a>    shade_fixed<span class="op">.</span><span class="fu">datum</span>(range_shade)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"d"</span><span class="op">,</span> d3<span class="op">.</span><span class="fu">area</span>()<span class="op">.</span><span class="fu">x</span>(d <span class="kw">=&gt;</span> <span class="fu">x</span>(d))<span class="op">.</span><span class="fu">y0</span>(<span class="fu">y</span>(<span class="dv">0</span>))<span class="op">.</span><span class="fu">y1</span>(d <span class="kw">=&gt;</span> <span class="fu">y</span>(<span class="fu">pdf</span>(d<span class="op">,</span> mu<span class="op">,</span> sigma_fixed))))<span class="op">;</span></span>
+<span id="cb3-108"><a href="#cb3-108" aria-hidden="true" tabindex="-1"></a>    shade_dynamic<span class="op">.</span><span class="fu">datum</span>(range_shade)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"d"</span><span class="op">,</span> d3<span class="op">.</span><span class="fu">area</span>()<span class="op">.</span><span class="fu">x</span>(d <span class="kw">=&gt;</span> <span class="fu">x</span>(d))<span class="op">.</span><span class="fu">y0</span>(<span class="fu">y</span>(<span class="dv">0</span>))<span class="op">.</span><span class="fu">y1</span>(d <span class="kw">=&gt;</span> <span class="fu">y</span>(<span class="fu">pdf</span>(d<span class="op">,</span> mu<span class="op">,</span> sigma_dynamic))))<span class="op">;</span></span>
+<span id="cb3-109"><a href="#cb3-109" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-110"><a href="#cb3-110" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Actualizar posición de la línea roja y etiqueta k</span></span>
+<span id="cb3-111"><a href="#cb3-111" aria-hidden="true" tabindex="-1"></a>    handle<span class="op">.</span><span class="fu">attr</span>(<span class="st">"transform"</span><span class="op">,</span> <span class="vs">`translate(</span><span class="sc">${</span><span class="fu">x</span>(val_umbral)<span class="sc">}</span><span class="vs">,0)`</span>)<span class="op">;</span></span>
+<span id="cb3-112"><a href="#cb3-112" aria-hidden="true" tabindex="-1"></a>    label<span class="op">.</span><span class="fu">text</span>(<span class="vs">`t = </span><span class="sc">${</span>val_umbral<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">1</span>)<span class="sc">}</span><span class="vs">`</span>)<span class="op">;</span></span>
+<span id="cb3-113"><a href="#cb3-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-114"><a href="#cb3-114" aria-hidden="true" tabindex="-1"></a>    <span class="co">// --- ACTUALIZAR LEYENDA (Calculando P(X &lt; k)) ---</span></span>
+<span id="cb3-115"><a href="#cb3-115" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> p_fixed <span class="op">=</span> <span class="dv">1</span><span class="op">-</span>jstat<span class="op">.</span><span class="at">normal</span><span class="op">.</span><span class="fu">cdf</span>(val_umbral<span class="op">,</span> mu<span class="op">,</span> sigma_fixed)<span class="op">;</span></span>
+<span id="cb3-116"><a href="#cb3-116" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> p_dynamic <span class="op">=</span> <span class="dv">1</span><span class="op">-</span>jstat<span class="op">.</span><span class="at">normal</span><span class="op">.</span><span class="fu">cdf</span>(val_umbral<span class="op">,</span> mu<span class="op">,</span> sigma_dynamic)<span class="op">;</span></span>
+<span id="cb3-117"><a href="#cb3-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-118"><a href="#cb3-118" aria-hidden="true" tabindex="-1"></a>    legend_fixed<span class="op">.</span><span class="fu">text</span>(<span class="vs">`</span><span class="sc">${</span>p_fixed<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">4</span>)<span class="sc">}</span><span class="vs">`</span>)<span class="op">;</span></span>
+<span id="cb3-119"><a href="#cb3-119" aria-hidden="true" tabindex="-1"></a>    legend_dynamic<span class="op">.</span><span class="fu">text</span>(<span class="vs">`</span><span class="sc">${</span>p_dynamic<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">4</span>)<span class="sc">}</span><span class="vs">`</span>)<span class="op">;</span></span>
+<span id="cb3-120"><a href="#cb3-120" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-121"><a href="#cb3-121" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Emitir valor al documento</span></span>
+<span id="cb3-122"><a href="#cb3-122" aria-hidden="true" tabindex="-1"></a>    svg<span class="op">.</span><span class="fu">node</span>()<span class="op">.</span><span class="at">value</span> <span class="op">=</span> val_umbral<span class="op">;</span></span>
+<span id="cb3-123"><a href="#cb3-123" aria-hidden="true" tabindex="-1"></a>    svg<span class="op">.</span><span class="fu">node</span>()<span class="op">.</span><span class="fu">dispatchEvent</span>(<span class="kw">new</span> <span class="bu">CustomEvent</span>(<span class="st">"input"</span>))<span class="op">;</span></span>
+<span id="cb3-124"><a href="#cb3-124" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-125"><a href="#cb3-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-126"><a href="#cb3-126" aria-hidden="true" tabindex="-1"></a>  <span class="co">// --- COMPONENTE ARRASTRABLE ---</span></span>
+<span id="cb3-127"><a href="#cb3-127" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> current_umbral <span class="op">=</span> <span class="fl">50.0</span><span class="op">;</span></span>
+<span id="cb3-128"><a href="#cb3-128" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> drag <span class="op">=</span> d3<span class="op">.</span><span class="fu">drag</span>()<span class="op">.</span><span class="fu">on</span>(<span class="st">"drag"</span><span class="op">,</span> (<span class="bu">event</span>) <span class="kw">=&gt;</span> {</span>
+<span id="cb3-129"><a href="#cb3-129" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> rawX <span class="op">=</span> x<span class="op">.</span><span class="fu">invert</span>(<span class="bu">event</span><span class="op">.</span><span class="at">x</span>)<span class="op">;</span></span>
+<span id="cb3-130"><a href="#cb3-130" aria-hidden="true" tabindex="-1"></a>    current_umbral <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(x_domain[<span class="dv">0</span>]<span class="op">,</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">min</span>(x_domain[<span class="dv">1</span>]<span class="op">,</span> rawX))<span class="op">;</span></span>
+<span id="cb3-131"><a href="#cb3-131" aria-hidden="true" tabindex="-1"></a>    <span class="fu">update</span>(current_umbral)<span class="op">;</span></span>
+<span id="cb3-132"><a href="#cb3-132" aria-hidden="true" tabindex="-1"></a>  })<span class="op">;</span></span>
+<span id="cb3-133"><a href="#cb3-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-134"><a href="#cb3-134" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> handle_color <span class="op">=</span> <span class="st">"rgba(243, 133, 110, 1)"</span><span class="op">;</span></span>
+<span id="cb3-135"><a href="#cb3-135" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> handle <span class="op">=</span> svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"g"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"cursor"</span><span class="op">,</span> <span class="st">"ew-resize"</span>)<span class="op">.</span><span class="fu">call</span>(drag)<span class="op">;</span></span>
+<span id="cb3-136"><a href="#cb3-136" aria-hidden="true" tabindex="-1"></a>  handle<span class="op">.</span><span class="fu">append</span>(<span class="st">"line"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"y1"</span><span class="op">,</span> margin<span class="op">.</span><span class="at">top</span> <span class="op">+</span> <span class="dv">20</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"y2"</span><span class="op">,</span> height <span class="op">-</span> margin<span class="op">.</span><span class="at">bottom</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke"</span><span class="op">,</span> handle_color)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke-width"</span><span class="op">,</span> <span class="dv">2</span>)<span class="op">;</span></span>
+<span id="cb3-137"><a href="#cb3-137" aria-hidden="true" tabindex="-1"></a>  handle<span class="op">.</span><span class="fu">append</span>(<span class="st">"rect"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"x"</span><span class="op">,</span> <span class="op">-</span><span class="dv">10</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"y"</span><span class="op">,</span> margin<span class="op">.</span><span class="at">top</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"width"</span><span class="op">,</span> <span class="dv">20</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"height"</span><span class="op">,</span> height <span class="op">-</span> margin<span class="op">.</span><span class="at">top</span> <span class="op">-</span> margin<span class="op">.</span><span class="at">bottom</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> <span class="st">"transparent"</span>)<span class="op">;</span></span>
+<span id="cb3-138"><a href="#cb3-138" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> label <span class="op">=</span> handle<span class="op">.</span><span class="fu">append</span>(<span class="st">"text"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"y"</span><span class="op">,</span> margin<span class="op">.</span><span class="at">top</span> <span class="op">+</span> <span class="dv">10</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"text-anchor"</span><span class="op">,</span> <span class="st">"middle"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> handle_color)<span class="op">.</span><span class="fu">style</span>(<span class="st">"font-size"</span><span class="op">,</span> <span class="st">"12px"</span>)<span class="op">.</span><span class="fu">style</span>(<span class="st">"font-weight"</span><span class="op">,</span> <span class="st">"bold"</span>)<span class="op">;</span></span>
+<span id="cb3-139"><a href="#cb3-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-140"><a href="#cb3-140" aria-hidden="true" tabindex="-1"></a>  <span class="fu">update</span>(current_umbral)<span class="op">;</span></span>
+<span id="cb3-141"><a href="#cb3-141" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> svg<span class="op">.</span><span class="fu">node</span>()<span class="op">;</span></span>
+<span id="cb3-142"><a href="#cb3-142" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</section>
+<section id="problema-20-a" class="level2">
+<h2 class="anchored" data-anchor-id="problema-20-a">Problema 20 (a)</h2>
+<section id="comparativa-de-primera-y-segunda-opción" class="level3">
+<h3 class="anchored" data-anchor-id="comparativa-de-primera-y-segunda-opción">Comparativa de primera y segunda opción</h3>
+<p>La siguiente visualización permite comparar las rentabilidades de la primera opción y la segunda opción, para diferentes valores de la correlación entre la rentabilidades de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>.</p>
+<p>La gráfica gris con línea discontinua se corresponde con la primera opción.</p>
+<p>La gráfica azul se corresponde con la segunda opción. Muestra inicialmente el caso de correlación <span class="math inline">\(0\)</span> (como en el enunciado). Puedes utilizar el deslizador para modificarla.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb4" data-startfrom="159" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 158;"><span id="cb4-159"><a href="#cb4-159" aria-hidden="true" tabindex="-1"></a>viewof rho_A_B_dynamic <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="op">-</span><span class="fl">0.5</span><span class="op">,</span><span class="dv">1</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Correlación entre A y B"</span>})</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb5" data-startfrom="165" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 164;"><span id="cb5-165"><a href="#cb5-165" aria-hidden="true" tabindex="-1"></a>viewof umbralAB <span class="op">=</span> {</span>
+<span id="cb5-166"><a href="#cb5-166" aria-hidden="true" tabindex="-1"></a>  <span class="co">// --- CONFIGURACIÓN DEL LIENZO ---</span></span>
+<span id="cb5-167"><a href="#cb5-167" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> width <span class="op">=</span> <span class="dv">700</span><span class="op">;</span></span>
+<span id="cb5-168"><a href="#cb5-168" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> height <span class="op">=</span> <span class="dv">400</span><span class="op">;</span></span>
+<span id="cb5-169"><a href="#cb5-169" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> margin <span class="op">=</span> {<span class="dt">top</span><span class="op">:</span> <span class="dv">40</span><span class="op">,</span> <span class="dt">right</span><span class="op">:</span> <span class="dv">30</span><span class="op">,</span> <span class="dt">bottom</span><span class="op">:</span> <span class="dv">40</span><span class="op">,</span> <span class="dt">left</span><span class="op">:</span> <span class="dv">50</span>}<span class="op">;</span> </span>
+<span id="cb5-170"><a href="#cb5-170" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-171"><a href="#cb5-171" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Parámetros estadísticos</span></span>
+<span id="cb5-172"><a href="#cb5-172" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> mu <span class="op">=</span> <span class="dv">4</span><span class="op">;</span></span>
+<span id="cb5-173"><a href="#cb5-173" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> sigma_fixed <span class="op">=</span> <span class="dv">8</span><span class="op">;</span></span>
+<span id="cb5-174"><a href="#cb5-174" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> sigma_dynamic <span class="op">=</span> ( <span class="dv">32</span><span class="op">*</span>(<span class="dv">1</span> <span class="op">+</span> rho_A_B_dynamic))<span class="op">**</span><span class="fl">0.5</span><span class="op">;</span></span>
+<span id="cb5-175"><a href="#cb5-175" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> x_min <span class="op">=</span> <span class="op">-</span><span class="dv">8</span><span class="op">;</span></span>
+<span id="cb5-176"><a href="#cb5-176" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> x_max <span class="op">=</span> <span class="dv">16</span><span class="op">;</span></span>
+<span id="cb5-177"><a href="#cb5-177" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> x_domain <span class="op">=</span> [x_min<span class="op">,</span> x_max]<span class="op">;</span></span>
+<span id="cb5-178"><a href="#cb5-178" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> y_max <span class="op">=</span> <span class="fl">0.12</span><span class="op">;</span></span>
+<span id="cb5-179"><a href="#cb5-179" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> y_domain <span class="op">=</span> [<span class="dv">0</span><span class="op">,</span> y_max]<span class="op">;</span></span>
+<span id="cb5-180"><a href="#cb5-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-181"><a href="#cb5-181" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Escalas de D3</span></span>
+<span id="cb5-182"><a href="#cb5-182" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> x <span class="op">=</span> d3<span class="op">.</span><span class="fu">scaleLinear</span>()<span class="op">.</span><span class="fu">domain</span>(x_domain)<span class="op">.</span><span class="fu">range</span>([margin<span class="op">.</span><span class="at">left</span><span class="op">,</span> width <span class="op">-</span> margin<span class="op">.</span><span class="at">right</span>])<span class="op">;</span></span>
+<span id="cb5-183"><a href="#cb5-183" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> y <span class="op">=</span> d3<span class="op">.</span><span class="fu">scaleLinear</span>()<span class="op">.</span><span class="fu">domain</span>(y_domain)<span class="op">.</span><span class="fu">range</span>([height <span class="op">-</span> margin<span class="op">.</span><span class="at">bottom</span><span class="op">,</span> margin<span class="op">.</span><span class="at">top</span>])<span class="op">;</span></span>
+<span id="cb5-184"><a href="#cb5-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-185"><a href="#cb5-185" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Funciones Matemáticas</span></span>
+<span id="cb5-186"><a href="#cb5-186" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> pdf <span class="op">=</span> (val<span class="op">,</span> m<span class="op">,</span> s) <span class="kw">=&gt;</span> (<span class="dv">1</span> <span class="op">/</span> (s <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">sqrt</span>(<span class="dv">2</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span>))) <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">exp</span>(<span class="op">-</span><span class="fl">0.5</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">pow</span>((val <span class="op">-</span> m) <span class="op">/</span> s<span class="op">,</span> <span class="dv">2</span>))<span class="op">;</span></span>
+<span id="cb5-187"><a href="#cb5-187" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> data_range <span class="op">=</span> d3<span class="op">.</span><span class="fu">range</span>(x_domain[<span class="dv">0</span>]<span class="op">,</span> x_domain[<span class="dv">1</span>]<span class="op">,</span> <span class="fl">0.1</span>)<span class="op">;</span></span>
+<span id="cb5-188"><a href="#cb5-188" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-189"><a href="#cb5-189" aria-hidden="true" tabindex="-1"></a>  <span class="co">// --- CREACIÓN DEL SVG ---</span></span>
+<span id="cb5-190"><a href="#cb5-190" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> svg <span class="op">=</span> d3<span class="op">.</span><span class="fu">create</span>(<span class="st">"svg"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"viewBox"</span><span class="op">,</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> width<span class="op">,</span> height])<span class="op">.</span><span class="fu">style</span>(<span class="st">"background"</span><span class="op">,</span> <span class="st">"white"</span>)<span class="op">.</span><span class="fu">style</span>(<span class="st">"border"</span><span class="op">,</span> <span class="st">"1px solid #eee"</span>)<span class="op">;</span></span>
+<span id="cb5-191"><a href="#cb5-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-192"><a href="#cb5-192" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Ejes</span></span>
+<span id="cb5-193"><a href="#cb5-193" aria-hidden="true" tabindex="-1"></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"g"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"transform"</span><span class="op">,</span> <span class="vs">`translate(0,</span><span class="sc">${</span>height <span class="op">-</span> margin<span class="op">.</span><span class="at">bottom</span><span class="sc">}</span><span class="vs">)`</span>)<span class="op">.</span><span class="fu">call</span>(d3<span class="op">.</span><span class="fu">axisBottom</span>(x))<span class="op">;</span></span>
+<span id="cb5-194"><a href="#cb5-194" aria-hidden="true" tabindex="-1"></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"g"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"transform"</span><span class="op">,</span> <span class="vs">`translate(</span><span class="sc">${</span>margin<span class="op">.</span><span class="at">left</span><span class="sc">}</span><span class="vs">,0)`</span>)<span class="op">.</span><span class="fu">call</span>(d3<span class="op">.</span><span class="fu">axisLeft</span>(y))<span class="op">;</span></span>
+<span id="cb5-195"><a href="#cb5-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-196"><a href="#cb5-196" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Título</span></span>
+<span id="cb5-197"><a href="#cb5-197" aria-hidden="true" tabindex="-1"></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"text"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"x"</span><span class="op">,</span> width<span class="op">/</span><span class="dv">2</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"y"</span><span class="op">,</span> <span class="dv">25</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"text-anchor"</span><span class="op">,</span> <span class="st">"middle"</span>)<span class="op">.</span><span class="fu">style</span>(<span class="st">"font-weight"</span><span class="op">,</span> <span class="st">"bold"</span>)<span class="op">.</span><span class="fu">text</span>(<span class="st">"Comparativa de primera y segunda opción"</span>)<span class="op">;</span></span>
+<span id="cb5-198"><a href="#cb5-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-199"><a href="#cb5-199" aria-hidden="true" tabindex="-1"></a>  <span class="co">// 1. PDF Fija y Variable</span></span>
+<span id="cb5-200"><a href="#cb5-200" aria-hidden="true" tabindex="-1"></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"path"</span>)<span class="op">.</span><span class="fu">datum</span>(data_range)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> <span class="st">"none"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke"</span><span class="op">,</span> <span class="st">"gray"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke-dasharray"</span><span class="op">,</span> <span class="st">"4,4"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"d"</span><span class="op">,</span> d3<span class="op">.</span><span class="fu">line</span>()<span class="op">.</span><span class="fu">x</span>(d <span class="kw">=&gt;</span> <span class="fu">x</span>(d))<span class="op">.</span><span class="fu">y</span>(d <span class="kw">=&gt;</span> <span class="fu">y</span>(<span class="fu">pdf</span>(d<span class="op">,</span> mu<span class="op">,</span> sigma_fixed))))<span class="op">;</span></span>
+<span id="cb5-201"><a href="#cb5-201" aria-hidden="true" tabindex="-1"></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"path"</span>)<span class="op">.</span><span class="fu">datum</span>(data_range)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> <span class="st">"none"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke"</span><span class="op">,</span> <span class="st">"rgb(44, 133, 235)"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke-width"</span><span class="op">,</span> <span class="dv">2</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"d"</span><span class="op">,</span> d3<span class="op">.</span><span class="fu">line</span>()<span class="op">.</span><span class="fu">x</span>(d <span class="kw">=&gt;</span> <span class="fu">x</span>(d))<span class="op">.</span><span class="fu">y</span>(d <span class="kw">=&gt;</span> <span class="fu">y</span>(<span class="fu">pdf</span>(d<span class="op">,</span> mu<span class="op">,</span> sigma_dynamic))))<span class="op">;</span></span>
+<span id="cb5-202"><a href="#cb5-202" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-203"><a href="#cb5-203" aria-hidden="true" tabindex="-1"></a>  <span class="co">// 2. Contenedores para áreas (cola derecha X &gt; k)</span></span>
+<span id="cb5-204"><a href="#cb5-204" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> shade_fixed_color <span class="op">=</span> <span class="st">"rgba(128, 128, 128, 0.25)"</span></span>
+<span id="cb5-205"><a href="#cb5-205" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> shade_fixed <span class="op">=</span> svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"path"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> shade_fixed_color)<span class="op">;</span></span>
+<span id="cb5-206"><a href="#cb5-206" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> shade_dynamic_color <span class="op">=</span> <span class="st">"rgba(44, 133, 235, 0.25)"</span><span class="op">;</span></span>
+<span id="cb5-207"><a href="#cb5-207" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> shade_dynamic <span class="op">=</span> svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"path"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> shade_dynamic_color)<span class="op">;</span></span>
+<span id="cb5-208"><a href="#cb5-208" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-209"><a href="#cb5-209" aria-hidden="true" tabindex="-1"></a>  <span class="co">// --- NUEVA LEYENDA DE PROBABILIDADES (X &gt; k) ---</span></span>
+<span id="cb5-210"><a href="#cb5-210" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> legend_x_left <span class="op">=</span> width <span class="op">-</span> margin<span class="op">.</span><span class="at">right</span> <span class="op">-</span> <span class="dv">140</span><span class="op">;</span></span>
+<span id="cb5-211"><a href="#cb5-211" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> legend_y_top <span class="op">=</span> (height <span class="op">-</span> margin<span class="op">.</span><span class="at">bottom</span>)<span class="op">/</span><span class="dv">2</span>  <span class="op">-</span> <span class="dv">35</span><span class="op">;</span></span>
+<span id="cb5-212"><a href="#cb5-212" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-213"><a href="#cb5-213" aria-hidden="true" tabindex="-1"></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"rect"</span>)</span>
+<span id="cb5-214"><a href="#cb5-214" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x"</span><span class="op">,</span> legend_x_left)      <span class="co">// Posición horizontal</span></span>
+<span id="cb5-215"><a href="#cb5-215" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"y"</span><span class="op">,</span> legend_y_top<span class="op">-</span><span class="dv">13</span>)      <span class="co">// Posición vertical</span></span>
+<span id="cb5-216"><a href="#cb5-216" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"width"</span><span class="op">,</span> <span class="dv">13</span>)  <span class="co">// Ancho</span></span>
+<span id="cb5-217"><a href="#cb5-217" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"height"</span><span class="op">,</span> <span class="dv">13</span>) <span class="co">// Alto</span></span>
+<span id="cb5-218"><a href="#cb5-218" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">style</span>(<span class="st">"fill"</span><span class="op">,</span> shade_fixed_color)<span class="op">;</span></span>
+<span id="cb5-219"><a href="#cb5-219" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> legend_fixed <span class="op">=</span> svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"text"</span>)</span>
+<span id="cb5-220"><a href="#cb5-220" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x"</span><span class="op">,</span> legend_x_left <span class="op">+</span> <span class="dv">20</span>)</span>
+<span id="cb5-221"><a href="#cb5-221" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"y"</span><span class="op">,</span> legend_y_top)</span>
+<span id="cb5-222"><a href="#cb5-222" aria-hidden="true" tabindex="-1"></a>    <span class="co">//.attr("fill", "gray")</span></span>
+<span id="cb5-223"><a href="#cb5-223" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">style</span>(<span class="st">"font-size"</span><span class="op">,</span> <span class="st">"13px"</span>)</span>
+<span id="cb5-224"><a href="#cb5-224" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">style</span>(<span class="st">"font-weight"</span><span class="op">,</span> <span class="st">"500"</span>)<span class="op">;</span></span>
+<span id="cb5-225"><a href="#cb5-225" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-226"><a href="#cb5-226" aria-hidden="true" tabindex="-1"></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"rect"</span>)</span>
+<span id="cb5-227"><a href="#cb5-227" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x"</span><span class="op">,</span> legend_x_left)      <span class="co">// Posición horizontal</span></span>
+<span id="cb5-228"><a href="#cb5-228" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"y"</span><span class="op">,</span> legend_y_top <span class="op">-</span><span class="dv">13</span> <span class="op">+</span> <span class="dv">20</span>)      <span class="co">// Posición vertical</span></span>
+<span id="cb5-229"><a href="#cb5-229" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"width"</span><span class="op">,</span> <span class="dv">13</span>)  <span class="co">// Ancho</span></span>
+<span id="cb5-230"><a href="#cb5-230" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"height"</span><span class="op">,</span> <span class="dv">13</span>) <span class="co">// Alto</span></span>
+<span id="cb5-231"><a href="#cb5-231" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">style</span>(<span class="st">"fill"</span><span class="op">,</span> shade_dynamic_color)<span class="op">;</span></span>
+<span id="cb5-232"><a href="#cb5-232" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> legend_dynamic <span class="op">=</span> svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"text"</span>)</span>
+<span id="cb5-233"><a href="#cb5-233" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x"</span><span class="op">,</span> legend_x_left <span class="op">+</span> <span class="dv">20</span>)</span>
+<span id="cb5-234"><a href="#cb5-234" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"y"</span><span class="op">,</span> legend_y_top <span class="op">+</span> <span class="dv">20</span>)</span>
+<span id="cb5-235"><a href="#cb5-235" aria-hidden="true" tabindex="-1"></a>    <span class="co">//.attr("fill", "blue")</span></span>
+<span id="cb5-236"><a href="#cb5-236" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">style</span>(<span class="st">"font-size"</span><span class="op">,</span> <span class="st">"13px"</span>)</span>
+<span id="cb5-237"><a href="#cb5-237" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">style</span>(<span class="st">"font-weight"</span><span class="op">,</span> <span class="st">"500"</span>)<span class="op">;</span></span>
+<span id="cb5-238"><a href="#cb5-238" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-239"><a href="#cb5-239" aria-hidden="true" tabindex="-1"></a>  <span class="co">// --- LÓGICA DE ACTUALIZACIÓN ---</span></span>
+<span id="cb5-240"><a href="#cb5-240" aria-hidden="true" tabindex="-1"></a>  <span class="kw">function</span> <span class="fu">update</span>(val_umbral){</span>
+<span id="cb5-241"><a href="#cb5-241" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> range_shade <span class="op">=</span> d3<span class="op">.</span><span class="fu">range</span>( x_domain[<span class="dv">0</span>]<span class="op">,</span> val_umbral<span class="op">,</span><span class="fl">0.1</span>)<span class="op">;</span></span>
+<span id="cb5-242"><a href="#cb5-242" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-243"><a href="#cb5-243" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Actualizar áreas sombreadas</span></span>
+<span id="cb5-244"><a href="#cb5-244" aria-hidden="true" tabindex="-1"></a>    shade_fixed<span class="op">.</span><span class="fu">datum</span>(range_shade)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"d"</span><span class="op">,</span> d3<span class="op">.</span><span class="fu">area</span>()<span class="op">.</span><span class="fu">x</span>(d <span class="kw">=&gt;</span> <span class="fu">x</span>(d))<span class="op">.</span><span class="fu">y0</span>(<span class="fu">y</span>(<span class="dv">0</span>))<span class="op">.</span><span class="fu">y1</span>(d <span class="kw">=&gt;</span> <span class="fu">y</span>(<span class="fu">pdf</span>(d<span class="op">,</span> mu<span class="op">,</span> sigma_fixed))))<span class="op">;</span></span>
+<span id="cb5-245"><a href="#cb5-245" aria-hidden="true" tabindex="-1"></a>    shade_dynamic<span class="op">.</span><span class="fu">datum</span>(range_shade)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"d"</span><span class="op">,</span> d3<span class="op">.</span><span class="fu">area</span>()<span class="op">.</span><span class="fu">x</span>(d <span class="kw">=&gt;</span> <span class="fu">x</span>(d))<span class="op">.</span><span class="fu">y0</span>(<span class="fu">y</span>(<span class="dv">0</span>))<span class="op">.</span><span class="fu">y1</span>(d <span class="kw">=&gt;</span> <span class="fu">y</span>(<span class="fu">pdf</span>(d<span class="op">,</span> mu<span class="op">,</span> sigma_dynamic))))<span class="op">;</span></span>
+<span id="cb5-246"><a href="#cb5-246" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-247"><a href="#cb5-247" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Actualizar posición de la línea roja y etiqueta k</span></span>
+<span id="cb5-248"><a href="#cb5-248" aria-hidden="true" tabindex="-1"></a>    handle<span class="op">.</span><span class="fu">attr</span>(<span class="st">"transform"</span><span class="op">,</span> <span class="vs">`translate(</span><span class="sc">${</span><span class="fu">x</span>(val_umbral)<span class="sc">}</span><span class="vs">,0)`</span>)<span class="op">;</span></span>
+<span id="cb5-249"><a href="#cb5-249" aria-hidden="true" tabindex="-1"></a>    label<span class="op">.</span><span class="fu">text</span>(<span class="vs">`r = </span><span class="sc">${</span>val_umbral<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">1</span>)<span class="sc">}</span><span class="vs">`</span>)<span class="op">;</span></span>
+<span id="cb5-250"><a href="#cb5-250" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-251"><a href="#cb5-251" aria-hidden="true" tabindex="-1"></a>    <span class="co">// --- ACTUALIZAR LEYENDA (Calculando P(X &lt; k)) ---</span></span>
+<span id="cb5-252"><a href="#cb5-252" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> p_fixed <span class="op">=</span> jstat<span class="op">.</span><span class="at">normal</span><span class="op">.</span><span class="fu">cdf</span>(val_umbral<span class="op">,</span> mu<span class="op">,</span> sigma_fixed)<span class="op">;</span></span>
+<span id="cb5-253"><a href="#cb5-253" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> p_dynamic <span class="op">=</span> jstat<span class="op">.</span><span class="at">normal</span><span class="op">.</span><span class="fu">cdf</span>(val_umbral<span class="op">,</span> mu<span class="op">,</span> sigma_dynamic)<span class="op">;</span></span>
+<span id="cb5-254"><a href="#cb5-254" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-255"><a href="#cb5-255" aria-hidden="true" tabindex="-1"></a>    legend_fixed<span class="op">.</span><span class="fu">text</span>(<span class="vs">`</span><span class="sc">${</span>p_fixed<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">4</span>)<span class="sc">}</span><span class="vs">`</span>)<span class="op">;</span></span>
+<span id="cb5-256"><a href="#cb5-256" aria-hidden="true" tabindex="-1"></a>    legend_dynamic<span class="op">.</span><span class="fu">text</span>(<span class="vs">`</span><span class="sc">${</span>p_dynamic<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">4</span>)<span class="sc">}</span><span class="vs">`</span>)<span class="op">;</span></span>
+<span id="cb5-257"><a href="#cb5-257" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-258"><a href="#cb5-258" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Emitir valor al documento</span></span>
+<span id="cb5-259"><a href="#cb5-259" aria-hidden="true" tabindex="-1"></a>    svg<span class="op">.</span><span class="fu">node</span>()<span class="op">.</span><span class="at">value</span> <span class="op">=</span> val_umbral<span class="op">;</span></span>
+<span id="cb5-260"><a href="#cb5-260" aria-hidden="true" tabindex="-1"></a>    svg<span class="op">.</span><span class="fu">node</span>()<span class="op">.</span><span class="fu">dispatchEvent</span>(<span class="kw">new</span> <span class="bu">CustomEvent</span>(<span class="st">"input"</span>))<span class="op">;</span></span>
+<span id="cb5-261"><a href="#cb5-261" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb5-262"><a href="#cb5-262" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-263"><a href="#cb5-263" aria-hidden="true" tabindex="-1"></a>  <span class="co">// --- COMPONENTE ARRASTRABLE ---</span></span>
+<span id="cb5-264"><a href="#cb5-264" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> current_umbral <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb5-265"><a href="#cb5-265" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> drag <span class="op">=</span> d3<span class="op">.</span><span class="fu">drag</span>()<span class="op">.</span><span class="fu">on</span>(<span class="st">"drag"</span><span class="op">,</span> (<span class="bu">event</span>) <span class="kw">=&gt;</span> {</span>
+<span id="cb5-266"><a href="#cb5-266" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> rawX <span class="op">=</span> x<span class="op">.</span><span class="fu">invert</span>(<span class="bu">event</span><span class="op">.</span><span class="at">x</span>)<span class="op">;</span></span>
+<span id="cb5-267"><a href="#cb5-267" aria-hidden="true" tabindex="-1"></a>    current_umbral <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(x_domain[<span class="dv">0</span>]<span class="op">,</span>rawX)<span class="op">;</span></span>
+<span id="cb5-268"><a href="#cb5-268" aria-hidden="true" tabindex="-1"></a>    <span class="fu">update</span>(current_umbral)<span class="op">;</span></span>
+<span id="cb5-269"><a href="#cb5-269" aria-hidden="true" tabindex="-1"></a>  })<span class="op">;</span></span>
+<span id="cb5-270"><a href="#cb5-270" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-271"><a href="#cb5-271" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> handle_color <span class="op">=</span> <span class="st">"rgba(243, 133, 110, 1)"</span><span class="op">;</span></span>
+<span id="cb5-272"><a href="#cb5-272" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> handle <span class="op">=</span> svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"g"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"cursor"</span><span class="op">,</span> <span class="st">"ew-resize"</span>)<span class="op">.</span><span class="fu">call</span>(drag)<span class="op">;</span></span>
+<span id="cb5-273"><a href="#cb5-273" aria-hidden="true" tabindex="-1"></a>  handle<span class="op">.</span><span class="fu">append</span>(<span class="st">"line"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"y1"</span><span class="op">,</span> margin<span class="op">.</span><span class="at">top</span> <span class="op">+</span> <span class="dv">20</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"y2"</span><span class="op">,</span> height <span class="op">-</span> margin<span class="op">.</span><span class="at">bottom</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke"</span><span class="op">,</span> handle_color)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke-width"</span><span class="op">,</span> <span class="dv">2</span>)<span class="op">;</span></span>
+<span id="cb5-274"><a href="#cb5-274" aria-hidden="true" tabindex="-1"></a>  handle<span class="op">.</span><span class="fu">append</span>(<span class="st">"rect"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"x"</span><span class="op">,</span> <span class="op">-</span><span class="dv">10</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"y"</span><span class="op">,</span> margin<span class="op">.</span><span class="at">top</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"width"</span><span class="op">,</span> <span class="dv">20</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"height"</span><span class="op">,</span> height <span class="op">-</span> margin<span class="op">.</span><span class="at">top</span> <span class="op">-</span> margin<span class="op">.</span><span class="at">bottom</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> <span class="st">"transparent"</span>)<span class="op">;</span></span>
+<span id="cb5-275"><a href="#cb5-275" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> label <span class="op">=</span> handle<span class="op">.</span><span class="fu">append</span>(<span class="st">"text"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"y"</span><span class="op">,</span> margin<span class="op">.</span><span class="at">top</span> <span class="op">+</span> <span class="dv">10</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"text-anchor"</span><span class="op">,</span> <span class="st">"middle"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> handle_color)<span class="op">.</span><span class="fu">style</span>(<span class="st">"font-size"</span><span class="op">,</span> <span class="st">"12px"</span>)<span class="op">.</span><span class="fu">style</span>(<span class="st">"font-weight"</span><span class="op">,</span> <span class="st">"bold"</span>)<span class="op">;</span></span>
+<span id="cb5-276"><a href="#cb5-276" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-277"><a href="#cb5-277" aria-hidden="true" tabindex="-1"></a>  <span class="fu">update</span>(current_umbral)<span class="op">;</span></span>
+<span id="cb5-278"><a href="#cb5-278" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> svg<span class="op">.</span><span class="fu">node</span>()<span class="op">;</span></span>
+<span id="cb5-279"><a href="#cb5-279" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-5" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</section>
+<section id="tercera-opción" class="level3">
+<h3 class="anchored" data-anchor-id="tercera-opción">Tercera opción</h3>
+<p>La siguiente visualización permite comparar la rentabilidad de la tercera opción para diferentes valores de la correlación entre la rentabilidades de <span class="math inline">\(A\)</span> y <span class="math inline">\(C\)</span>.</p>
+<p>Muestra inicialmente el caso de correlación <span class="math inline">\(0.3\)</span> (como en el enunciado). Puedes utilizar el deslizador para modificarla. La gráfica azul se actualizará para la correlación elegida. Y se mantendrá fija la gráfica gris con línea discontinua para la correlación inicial <span class="math inline">\(0.3\)</span>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb6" data-startfrom="291" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 290;"><span id="cb6-291"><a href="#cb6-291" aria-hidden="true" tabindex="-1"></a>viewof rho_A_C_dynamic <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="op">-</span><span class="dv">1</span><span class="op">,</span><span class="dv">1</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="fl">0.3</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Correlación entre A y C"</span>})</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-6" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb7" data-startfrom="297" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 296;"><span id="cb7-297"><a href="#cb7-297" aria-hidden="true" tabindex="-1"></a>viewof umbralAC <span class="op">=</span> {</span>
+<span id="cb7-298"><a href="#cb7-298" aria-hidden="true" tabindex="-1"></a>  <span class="co">// --- CONFIGURACIÓN DEL LIENZO ---</span></span>
+<span id="cb7-299"><a href="#cb7-299" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> width <span class="op">=</span> <span class="dv">700</span><span class="op">;</span></span>
+<span id="cb7-300"><a href="#cb7-300" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> height <span class="op">=</span> <span class="dv">400</span><span class="op">;</span></span>
+<span id="cb7-301"><a href="#cb7-301" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> margin <span class="op">=</span> {<span class="dt">top</span><span class="op">:</span> <span class="dv">40</span><span class="op">,</span> <span class="dt">right</span><span class="op">:</span> <span class="dv">30</span><span class="op">,</span> <span class="dt">bottom</span><span class="op">:</span> <span class="dv">40</span><span class="op">,</span> <span class="dt">left</span><span class="op">:</span> <span class="dv">50</span>}<span class="op">;</span> </span>
+<span id="cb7-302"><a href="#cb7-302" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb7-303"><a href="#cb7-303" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Parámetros estadísticos</span></span>
+<span id="cb7-304"><a href="#cb7-304" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> mu <span class="op">=</span> <span class="dv">8</span><span class="op">;</span></span>
+<span id="cb7-305"><a href="#cb7-305" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> sigma_fixed <span class="op">=</span> <span class="dv">140</span><span class="op">**</span><span class="fl">0.5</span><span class="op">;</span></span>
+<span id="cb7-306"><a href="#cb7-306" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> sigma_dynamic <span class="op">=</span> ( <span class="dv">4</span><span class="op">*</span>(<span class="dv">29</span> <span class="op">+</span> <span class="dv">20</span><span class="op">*</span>rho_A_C_dynamic))<span class="op">**</span><span class="fl">0.5</span><span class="op">;</span></span>
+<span id="cb7-307"><a href="#cb7-307" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> x_min <span class="op">=</span> <span class="op">-</span><span class="dv">12</span><span class="op">;</span></span>
+<span id="cb7-308"><a href="#cb7-308" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> x_max <span class="op">=</span> <span class="dv">28</span><span class="op">;</span></span>
+<span id="cb7-309"><a href="#cb7-309" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> x_domain <span class="op">=</span> [x_min<span class="op">,</span> x_max]<span class="op">;</span></span>
+<span id="cb7-310"><a href="#cb7-310" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> y_max <span class="op">=</span> <span class="fl">0.07</span><span class="op">;</span></span>
+<span id="cb7-311"><a href="#cb7-311" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> y_domain <span class="op">=</span> [<span class="dv">0</span><span class="op">,</span> y_max]<span class="op">;</span></span>
+<span id="cb7-312"><a href="#cb7-312" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-313"><a href="#cb7-313" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Escalas de D3</span></span>
+<span id="cb7-314"><a href="#cb7-314" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> x <span class="op">=</span> d3<span class="op">.</span><span class="fu">scaleLinear</span>()<span class="op">.</span><span class="fu">domain</span>(x_domain)<span class="op">.</span><span class="fu">range</span>([margin<span class="op">.</span><span class="at">left</span><span class="op">,</span> width <span class="op">-</span> margin<span class="op">.</span><span class="at">right</span>])<span class="op">;</span></span>
+<span id="cb7-315"><a href="#cb7-315" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> y <span class="op">=</span> d3<span class="op">.</span><span class="fu">scaleLinear</span>()<span class="op">.</span><span class="fu">domain</span>(y_domain)<span class="op">.</span><span class="fu">range</span>([height <span class="op">-</span> margin<span class="op">.</span><span class="at">bottom</span><span class="op">,</span> margin<span class="op">.</span><span class="at">top</span>])<span class="op">;</span></span>
+<span id="cb7-316"><a href="#cb7-316" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-317"><a href="#cb7-317" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Funciones Matemáticas</span></span>
+<span id="cb7-318"><a href="#cb7-318" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> pdf <span class="op">=</span> (val<span class="op">,</span> m<span class="op">,</span> s) <span class="kw">=&gt;</span> (<span class="dv">1</span> <span class="op">/</span> (s <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">sqrt</span>(<span class="dv">2</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span>))) <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">exp</span>(<span class="op">-</span><span class="fl">0.5</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">pow</span>((val <span class="op">-</span> m) <span class="op">/</span> s<span class="op">,</span> <span class="dv">2</span>))<span class="op">;</span></span>
+<span id="cb7-319"><a href="#cb7-319" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> data_range <span class="op">=</span> d3<span class="op">.</span><span class="fu">range</span>(x_domain[<span class="dv">0</span>]<span class="op">,</span> x_domain[<span class="dv">1</span>]<span class="op">,</span> <span class="fl">0.1</span>)<span class="op">;</span></span>
+<span id="cb7-320"><a href="#cb7-320" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-321"><a href="#cb7-321" aria-hidden="true" tabindex="-1"></a>  <span class="co">// --- CREACIÓN DEL SVG ---</span></span>
+<span id="cb7-322"><a href="#cb7-322" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> svg <span class="op">=</span> d3<span class="op">.</span><span class="fu">create</span>(<span class="st">"svg"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"viewBox"</span><span class="op">,</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> width<span class="op">,</span> height])<span class="op">.</span><span class="fu">style</span>(<span class="st">"background"</span><span class="op">,</span> <span class="st">"white"</span>)<span class="op">.</span><span class="fu">style</span>(<span class="st">"border"</span><span class="op">,</span> <span class="st">"1px solid #eee"</span>)<span class="op">;</span></span>
+<span id="cb7-323"><a href="#cb7-323" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-324"><a href="#cb7-324" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Ejes</span></span>
+<span id="cb7-325"><a href="#cb7-325" aria-hidden="true" tabindex="-1"></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"g"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"transform"</span><span class="op">,</span> <span class="vs">`translate(0,</span><span class="sc">${</span>height <span class="op">-</span> margin<span class="op">.</span><span class="at">bottom</span><span class="sc">}</span><span class="vs">)`</span>)<span class="op">.</span><span class="fu">call</span>(d3<span class="op">.</span><span class="fu">axisBottom</span>(x))<span class="op">;</span></span>
+<span id="cb7-326"><a href="#cb7-326" aria-hidden="true" tabindex="-1"></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"g"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"transform"</span><span class="op">,</span> <span class="vs">`translate(</span><span class="sc">${</span>margin<span class="op">.</span><span class="at">left</span><span class="sc">}</span><span class="vs">,0)`</span>)<span class="op">.</span><span class="fu">call</span>(d3<span class="op">.</span><span class="fu">axisLeft</span>(y))<span class="op">;</span></span>
+<span id="cb7-327"><a href="#cb7-327" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-328"><a href="#cb7-328" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Título</span></span>
+<span id="cb7-329"><a href="#cb7-329" aria-hidden="true" tabindex="-1"></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"text"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"x"</span><span class="op">,</span> width<span class="op">/</span><span class="dv">2</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"y"</span><span class="op">,</span> <span class="dv">25</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"text-anchor"</span><span class="op">,</span> <span class="st">"middle"</span>)<span class="op">.</span><span class="fu">style</span>(<span class="st">"font-weight"</span><span class="op">,</span> <span class="st">"bold"</span>)<span class="op">.</span><span class="fu">text</span>(<span class="st">"Tercera opción"</span>)<span class="op">;</span></span>
+<span id="cb7-330"><a href="#cb7-330" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-331"><a href="#cb7-331" aria-hidden="true" tabindex="-1"></a>  <span class="co">// 1. PDF Fija y Variable</span></span>
+<span id="cb7-332"><a href="#cb7-332" aria-hidden="true" tabindex="-1"></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"path"</span>)<span class="op">.</span><span class="fu">datum</span>(data_range)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> <span class="st">"none"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke"</span><span class="op">,</span> <span class="st">"gray"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke-dasharray"</span><span class="op">,</span> <span class="st">"4,4"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"d"</span><span class="op">,</span> d3<span class="op">.</span><span class="fu">line</span>()<span class="op">.</span><span class="fu">x</span>(d <span class="kw">=&gt;</span> <span class="fu">x</span>(d))<span class="op">.</span><span class="fu">y</span>(d <span class="kw">=&gt;</span> <span class="fu">y</span>(<span class="fu">pdf</span>(d<span class="op">,</span> mu<span class="op">,</span> sigma_fixed))))<span class="op">;</span></span>
+<span id="cb7-333"><a href="#cb7-333" aria-hidden="true" tabindex="-1"></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"path"</span>)<span class="op">.</span><span class="fu">datum</span>(data_range)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> <span class="st">"none"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke"</span><span class="op">,</span> <span class="st">"rgb(44, 133, 235)"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke-width"</span><span class="op">,</span> <span class="dv">2</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"d"</span><span class="op">,</span> d3<span class="op">.</span><span class="fu">line</span>()<span class="op">.</span><span class="fu">x</span>(d <span class="kw">=&gt;</span> <span class="fu">x</span>(d))<span class="op">.</span><span class="fu">y</span>(d <span class="kw">=&gt;</span> <span class="fu">y</span>(<span class="fu">pdf</span>(d<span class="op">,</span> mu<span class="op">,</span> sigma_dynamic))))<span class="op">;</span></span>
+<span id="cb7-334"><a href="#cb7-334" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-335"><a href="#cb7-335" aria-hidden="true" tabindex="-1"></a>  <span class="co">// 2. Contenedores para áreas (cola derecha X &gt; k)</span></span>
+<span id="cb7-336"><a href="#cb7-336" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> shade_fixed_color <span class="op">=</span> <span class="st">"rgba(128, 128, 128, 0.25)"</span></span>
+<span id="cb7-337"><a href="#cb7-337" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> shade_fixed <span class="op">=</span> svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"path"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> shade_fixed_color)<span class="op">;</span></span>
+<span id="cb7-338"><a href="#cb7-338" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> shade_dynamic_color <span class="op">=</span> <span class="st">"rgba(44, 133, 235, 0.25)"</span><span class="op">;</span></span>
+<span id="cb7-339"><a href="#cb7-339" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> shade_dynamic <span class="op">=</span> svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"path"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> shade_dynamic_color)<span class="op">;</span></span>
+<span id="cb7-340"><a href="#cb7-340" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-341"><a href="#cb7-341" aria-hidden="true" tabindex="-1"></a>  <span class="co">// --- NUEVA LEYENDA DE PROBABILIDADES (X &gt; k) ---</span></span>
+<span id="cb7-342"><a href="#cb7-342" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> legend_x_left <span class="op">=</span> width <span class="op">-</span> margin<span class="op">.</span><span class="at">right</span> <span class="op">-</span> <span class="dv">140</span><span class="op">;</span></span>
+<span id="cb7-343"><a href="#cb7-343" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> legend_y_top <span class="op">=</span> (height <span class="op">-</span> margin<span class="op">.</span><span class="at">bottom</span>)<span class="op">/</span><span class="dv">2</span>  <span class="op">-</span> <span class="dv">35</span><span class="op">;</span></span>
+<span id="cb7-344"><a href="#cb7-344" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-345"><a href="#cb7-345" aria-hidden="true" tabindex="-1"></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"rect"</span>)</span>
+<span id="cb7-346"><a href="#cb7-346" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x"</span><span class="op">,</span> legend_x_left)      <span class="co">// Posición horizontal</span></span>
+<span id="cb7-347"><a href="#cb7-347" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"y"</span><span class="op">,</span> legend_y_top<span class="op">-</span><span class="dv">13</span>)      <span class="co">// Posición vertical</span></span>
+<span id="cb7-348"><a href="#cb7-348" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"width"</span><span class="op">,</span> <span class="dv">13</span>)  <span class="co">// Ancho</span></span>
+<span id="cb7-349"><a href="#cb7-349" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"height"</span><span class="op">,</span> <span class="dv">13</span>) <span class="co">// Alto</span></span>
+<span id="cb7-350"><a href="#cb7-350" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">style</span>(<span class="st">"fill"</span><span class="op">,</span> shade_fixed_color)<span class="op">;</span></span>
+<span id="cb7-351"><a href="#cb7-351" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> legend_fixed <span class="op">=</span> svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"text"</span>)</span>
+<span id="cb7-352"><a href="#cb7-352" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x"</span><span class="op">,</span> legend_x_left <span class="op">+</span> <span class="dv">20</span>)</span>
+<span id="cb7-353"><a href="#cb7-353" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"y"</span><span class="op">,</span> legend_y_top)</span>
+<span id="cb7-354"><a href="#cb7-354" aria-hidden="true" tabindex="-1"></a>    <span class="co">//.attr("fill", "gray")</span></span>
+<span id="cb7-355"><a href="#cb7-355" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">style</span>(<span class="st">"font-size"</span><span class="op">,</span> <span class="st">"13px"</span>)</span>
+<span id="cb7-356"><a href="#cb7-356" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">style</span>(<span class="st">"font-weight"</span><span class="op">,</span> <span class="st">"500"</span>)<span class="op">;</span></span>
+<span id="cb7-357"><a href="#cb7-357" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-358"><a href="#cb7-358" aria-hidden="true" tabindex="-1"></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"rect"</span>)</span>
+<span id="cb7-359"><a href="#cb7-359" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x"</span><span class="op">,</span> legend_x_left)      <span class="co">// Posición horizontal</span></span>
+<span id="cb7-360"><a href="#cb7-360" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"y"</span><span class="op">,</span> legend_y_top <span class="op">-</span><span class="dv">13</span> <span class="op">+</span> <span class="dv">20</span>)      <span class="co">// Posición vertical</span></span>
+<span id="cb7-361"><a href="#cb7-361" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"width"</span><span class="op">,</span> <span class="dv">13</span>)  <span class="co">// Ancho</span></span>
+<span id="cb7-362"><a href="#cb7-362" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"height"</span><span class="op">,</span> <span class="dv">13</span>) <span class="co">// Alto</span></span>
+<span id="cb7-363"><a href="#cb7-363" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">style</span>(<span class="st">"fill"</span><span class="op">,</span> shade_dynamic_color)<span class="op">;</span></span>
+<span id="cb7-364"><a href="#cb7-364" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> legend_dynamic <span class="op">=</span> svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"text"</span>)</span>
+<span id="cb7-365"><a href="#cb7-365" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x"</span><span class="op">,</span> legend_x_left <span class="op">+</span> <span class="dv">20</span>)</span>
+<span id="cb7-366"><a href="#cb7-366" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"y"</span><span class="op">,</span> legend_y_top <span class="op">+</span> <span class="dv">20</span>)</span>
+<span id="cb7-367"><a href="#cb7-367" aria-hidden="true" tabindex="-1"></a>    <span class="co">//.attr("fill", "blue")</span></span>
+<span id="cb7-368"><a href="#cb7-368" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">style</span>(<span class="st">"font-size"</span><span class="op">,</span> <span class="st">"13px"</span>)</span>
+<span id="cb7-369"><a href="#cb7-369" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">style</span>(<span class="st">"font-weight"</span><span class="op">,</span> <span class="st">"500"</span>)<span class="op">;</span></span>
+<span id="cb7-370"><a href="#cb7-370" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-371"><a href="#cb7-371" aria-hidden="true" tabindex="-1"></a>  <span class="co">// --- LÓGICA DE ACTUALIZACIÓN ---</span></span>
+<span id="cb7-372"><a href="#cb7-372" aria-hidden="true" tabindex="-1"></a>  <span class="kw">function</span> <span class="fu">update</span>(val_umbral){</span>
+<span id="cb7-373"><a href="#cb7-373" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> range_shade <span class="op">=</span> d3<span class="op">.</span><span class="fu">range</span>( x_domain[<span class="dv">0</span>]<span class="op">,</span> val_umbral<span class="op">,</span><span class="fl">0.1</span>)<span class="op">;</span></span>
+<span id="cb7-374"><a href="#cb7-374" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-375"><a href="#cb7-375" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Actualizar áreas sombreadas</span></span>
+<span id="cb7-376"><a href="#cb7-376" aria-hidden="true" tabindex="-1"></a>    shade_fixed<span class="op">.</span><span class="fu">datum</span>(range_shade)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"d"</span><span class="op">,</span> d3<span class="op">.</span><span class="fu">area</span>()<span class="op">.</span><span class="fu">x</span>(d <span class="kw">=&gt;</span> <span class="fu">x</span>(d))<span class="op">.</span><span class="fu">y0</span>(<span class="fu">y</span>(<span class="dv">0</span>))<span class="op">.</span><span class="fu">y1</span>(d <span class="kw">=&gt;</span> <span class="fu">y</span>(<span class="fu">pdf</span>(d<span class="op">,</span> mu<span class="op">,</span> sigma_fixed))))<span class="op">;</span></span>
+<span id="cb7-377"><a href="#cb7-377" aria-hidden="true" tabindex="-1"></a>    shade_dynamic<span class="op">.</span><span class="fu">datum</span>(range_shade)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"d"</span><span class="op">,</span> d3<span class="op">.</span><span class="fu">area</span>()<span class="op">.</span><span class="fu">x</span>(d <span class="kw">=&gt;</span> <span class="fu">x</span>(d))<span class="op">.</span><span class="fu">y0</span>(<span class="fu">y</span>(<span class="dv">0</span>))<span class="op">.</span><span class="fu">y1</span>(d <span class="kw">=&gt;</span> <span class="fu">y</span>(<span class="fu">pdf</span>(d<span class="op">,</span> mu<span class="op">,</span> sigma_dynamic))))<span class="op">;</span></span>
+<span id="cb7-378"><a href="#cb7-378" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-379"><a href="#cb7-379" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Actualizar posición de la línea roja y etiqueta k</span></span>
+<span id="cb7-380"><a href="#cb7-380" aria-hidden="true" tabindex="-1"></a>    handle<span class="op">.</span><span class="fu">attr</span>(<span class="st">"transform"</span><span class="op">,</span> <span class="vs">`translate(</span><span class="sc">${</span><span class="fu">x</span>(val_umbral)<span class="sc">}</span><span class="vs">,0)`</span>)<span class="op">;</span></span>
+<span id="cb7-381"><a href="#cb7-381" aria-hidden="true" tabindex="-1"></a>    label<span class="op">.</span><span class="fu">text</span>(<span class="vs">`r = </span><span class="sc">${</span>val_umbral<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">1</span>)<span class="sc">}</span><span class="vs">`</span>)<span class="op">;</span></span>
+<span id="cb7-382"><a href="#cb7-382" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-383"><a href="#cb7-383" aria-hidden="true" tabindex="-1"></a>    <span class="co">// --- ACTUALIZAR LEYENDA (Calculando P(X &lt; k)) ---</span></span>
+<span id="cb7-384"><a href="#cb7-384" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> p_fixed <span class="op">=</span> jstat<span class="op">.</span><span class="at">normal</span><span class="op">.</span><span class="fu">cdf</span>(val_umbral<span class="op">,</span> mu<span class="op">,</span> sigma_fixed)<span class="op">;</span></span>
+<span id="cb7-385"><a href="#cb7-385" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> p_dynamic <span class="op">=</span> jstat<span class="op">.</span><span class="at">normal</span><span class="op">.</span><span class="fu">cdf</span>(val_umbral<span class="op">,</span> mu<span class="op">,</span> sigma_dynamic)<span class="op">;</span></span>
+<span id="cb7-386"><a href="#cb7-386" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-387"><a href="#cb7-387" aria-hidden="true" tabindex="-1"></a>    legend_fixed<span class="op">.</span><span class="fu">text</span>(<span class="vs">`</span><span class="sc">${</span>p_fixed<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">4</span>)<span class="sc">}</span><span class="vs">`</span>)<span class="op">;</span></span>
+<span id="cb7-388"><a href="#cb7-388" aria-hidden="true" tabindex="-1"></a>    legend_dynamic<span class="op">.</span><span class="fu">text</span>(<span class="vs">`</span><span class="sc">${</span>p_dynamic<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">4</span>)<span class="sc">}</span><span class="vs">`</span>)<span class="op">;</span></span>
+<span id="cb7-389"><a href="#cb7-389" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-390"><a href="#cb7-390" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Emitir valor al documento</span></span>
+<span id="cb7-391"><a href="#cb7-391" aria-hidden="true" tabindex="-1"></a>    svg<span class="op">.</span><span class="fu">node</span>()<span class="op">.</span><span class="at">value</span> <span class="op">=</span> val_umbral<span class="op">;</span></span>
+<span id="cb7-392"><a href="#cb7-392" aria-hidden="true" tabindex="-1"></a>    svg<span class="op">.</span><span class="fu">node</span>()<span class="op">.</span><span class="fu">dispatchEvent</span>(<span class="kw">new</span> <span class="bu">CustomEvent</span>(<span class="st">"input"</span>))<span class="op">;</span></span>
+<span id="cb7-393"><a href="#cb7-393" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb7-394"><a href="#cb7-394" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-395"><a href="#cb7-395" aria-hidden="true" tabindex="-1"></a>  <span class="co">// --- COMPONENTE ARRASTRABLE ---</span></span>
+<span id="cb7-396"><a href="#cb7-396" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> current_umbral <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb7-397"><a href="#cb7-397" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> drag <span class="op">=</span> d3<span class="op">.</span><span class="fu">drag</span>()<span class="op">.</span><span class="fu">on</span>(<span class="st">"drag"</span><span class="op">,</span> (<span class="bu">event</span>) <span class="kw">=&gt;</span> {</span>
+<span id="cb7-398"><a href="#cb7-398" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> rawX <span class="op">=</span> x<span class="op">.</span><span class="fu">invert</span>(<span class="bu">event</span><span class="op">.</span><span class="at">x</span>)<span class="op">;</span></span>
+<span id="cb7-399"><a href="#cb7-399" aria-hidden="true" tabindex="-1"></a>    current_umbral <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(x_domain[<span class="dv">0</span>]<span class="op">,</span>rawX)<span class="op">;</span></span>
+<span id="cb7-400"><a href="#cb7-400" aria-hidden="true" tabindex="-1"></a>    <span class="fu">update</span>(current_umbral)<span class="op">;</span></span>
+<span id="cb7-401"><a href="#cb7-401" aria-hidden="true" tabindex="-1"></a>  })<span class="op">;</span></span>
+<span id="cb7-402"><a href="#cb7-402" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-403"><a href="#cb7-403" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> handle_color <span class="op">=</span> <span class="st">"rgba(243, 133, 110, 1)"</span><span class="op">;</span></span>
+<span id="cb7-404"><a href="#cb7-404" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> handle <span class="op">=</span> svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"g"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"cursor"</span><span class="op">,</span> <span class="st">"ew-resize"</span>)<span class="op">.</span><span class="fu">call</span>(drag)<span class="op">;</span></span>
+<span id="cb7-405"><a href="#cb7-405" aria-hidden="true" tabindex="-1"></a>  handle<span class="op">.</span><span class="fu">append</span>(<span class="st">"line"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"y1"</span><span class="op">,</span> margin<span class="op">.</span><span class="at">top</span> <span class="op">+</span> <span class="dv">20</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"y2"</span><span class="op">,</span> height <span class="op">-</span> margin<span class="op">.</span><span class="at">bottom</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke"</span><span class="op">,</span> handle_color)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke-width"</span><span class="op">,</span> <span class="dv">2</span>)<span class="op">;</span></span>
+<span id="cb7-406"><a href="#cb7-406" aria-hidden="true" tabindex="-1"></a>  handle<span class="op">.</span><span class="fu">append</span>(<span class="st">"rect"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"x"</span><span class="op">,</span> <span class="op">-</span><span class="dv">10</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"y"</span><span class="op">,</span> margin<span class="op">.</span><span class="at">top</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"width"</span><span class="op">,</span> <span class="dv">20</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"height"</span><span class="op">,</span> height <span class="op">-</span> margin<span class="op">.</span><span class="at">top</span> <span class="op">-</span> margin<span class="op">.</span><span class="at">bottom</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> <span class="st">"transparent"</span>)<span class="op">;</span></span>
+<span id="cb7-407"><a href="#cb7-407" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> label <span class="op">=</span> handle<span class="op">.</span><span class="fu">append</span>(<span class="st">"text"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"y"</span><span class="op">,</span> margin<span class="op">.</span><span class="at">top</span> <span class="op">+</span> <span class="dv">10</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"text-anchor"</span><span class="op">,</span> <span class="st">"middle"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> handle_color)<span class="op">.</span><span class="fu">style</span>(<span class="st">"font-size"</span><span class="op">,</span> <span class="st">"12px"</span>)<span class="op">.</span><span class="fu">style</span>(<span class="st">"font-weight"</span><span class="op">,</span> <span class="st">"bold"</span>)<span class="op">;</span></span>
+<span id="cb7-408"><a href="#cb7-408" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-409"><a href="#cb7-409" aria-hidden="true" tabindex="-1"></a>  <span class="fu">update</span>(current_umbral)<span class="op">;</span></span>
+<span id="cb7-410"><a href="#cb7-410" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> svg<span class="op">.</span><span class="fu">node</span>()<span class="op">;</span></span>
+<span id="cb7-411"><a href="#cb7-411" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-7" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W119
+</script>
+<div id="exercise-loading-indicator" class="exercise-loading-indicator d-none d-flex align-items-center gap-2">
+<div id="exercise-loading-status" class="d-flex gap-2">
+
+</div>
+<div class="spinner-grow spinner-grow-sm">
+
+</div>
+</div>
+<script type="vfs-file">
+W10=
+</script>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImQzID0gcmVxdWlyZShcImQzQDdcIilcbmpzdGF0ID0gcmVxdWlyZShcImpzdGF0QDEuOS42XCIpXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJ2aWV3b2YgcmhvX2R5bmFtaWMgPSBJbnB1dHMucmFuZ2UoWy0wLjgsMC44XSwge3ZhbHVlOiAwLjUsIHN0ZXA6IDAuMSwgbGFiZWw6IFwiQ29ycmVsYWNpw7NuIGVudHJlIFggZSBZXCJ9KVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0zIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIHVtYnJhbCA9IHtcbiAgLy8gLS0tIENPTkZJR1VSQUNJw5NOIERFTCBMSUVOWk8gLS0tXG4gIGNvbnN0IHdpZHRoID0gNzAwO1xuICBjb25zdCBoZWlnaHQgPSA0MDA7XG4gIGNvbnN0IG1hcmdpbiA9IHt0b3A6IDQwLCByaWdodDogMzAsIGJvdHRvbTogNDAsIGxlZnQ6IDUwfTsgXG4gIFxuICAvLyBQYXLDoW1ldHJvcyBlc3RhZMOtc3RpY29zXG4gIGNvbnN0IG11ID0gNDU7XG4gIGNvbnN0IHNpZ21hX2ZpeGVkID0gNTtcbiAgY29uc3Qgc2lnbWFfZHluYW1pYyA9ICgyNSArIDI0KnJob19keW5hbWljKSoqMC41O1xuICBjb25zdCB4X21pbiA9IDMwO1xuICBjb25zdCB4X21heCA9IDYwO1xuICBjb25zdCB4X2RvbWFpbiA9IFt4X21pbiwgeF9tYXhdO1xuICBjb25zdCB5X21heCA9IDAuMTg7XG4gIGNvbnN0IHlfZG9tYWluID0gWzAsIHlfbWF4XTtcblxuICAvLyBFc2NhbGFzIGRlIEQzXG4gIGNvbnN0IHggPSBkMy5zY2FsZUxpbmVhcigpLmRvbWFpbih4X2RvbWFpbikucmFuZ2UoW21hcmdpbi5sZWZ0LCB3aWR0aCAtIG1hcmdpbi5yaWdodF0pO1xuICBjb25zdCB5ID0gZDMuc2NhbGVMaW5lYXIoKS5kb21haW4oeV9kb21haW4pLnJhbmdlKFtoZWlnaHQgLSBtYXJnaW4uYm90dG9tLCBtYXJnaW4udG9wXSk7XG5cbiAgLy8gRnVuY2lvbmVzIE1hdGVtw6F0aWNhc1xuICBjb25zdCBwZGYgPSAodmFsLCBtLCBzKSA9PiAoMSAvIChzICogTWF0aC5zcXJ0KDIgKiBNYXRoLlBJKSkpICogTWF0aC5leHAoLTAuNSAqIE1hdGgucG93KCh2YWwgLSBtKSAvIHMsIDIpKTtcbiAgY29uc3QgZGF0YV9yYW5nZSA9IGQzLnJhbmdlKHhfZG9tYWluWzBdLCB4X2RvbWFpblsxXSwgMC4xKTtcblxuICAvLyAtLS0gQ1JFQUNJw5NOIERFTCBTVkcgLS0tXG4gICAgY29uc3Qgc3ZnID0gZDMuY3JlYXRlKFwic3ZnXCIpLmF0dHIoXCJ2aWV3Qm94XCIsIFswLCAwLCB3aWR0aCwgaGVpZ2h0XSkuc3R5bGUoXCJiYWNrZ3JvdW5kXCIsIFwid2hpdGVcIikuc3R5bGUoXCJib3JkZXJcIiwgXCIxcHggc29saWQgI2VlZVwiKTtcblxuICAvLyBFamVzXG4gIHN2Zy5hcHBlbmQoXCJnXCIpLmF0dHIoXCJ0cmFuc2Zvcm1cIiwgYHRyYW5zbGF0ZSgwLCR7aGVpZ2h0IC0gbWFyZ2luLmJvdHRvbX0pYCkuY2FsbChkMy5heGlzQm90dG9tKHgpKTtcbiAgc3ZnLmFwcGVuZChcImdcIikuYXR0cihcInRyYW5zZm9ybVwiLCBgdHJhbnNsYXRlKCR7bWFyZ2luLmxlZnR9LDApYCkuY2FsbChkMy5heGlzTGVmdCh5KSk7XG5cbiAgLy8gVMOtdHVsb1xuICBzdmcuYXBwZW5kKFwidGV4dFwiKS5hdHRyKFwieFwiLCB3aWR0aC8yKS5hdHRyKFwieVwiLCAyNSkuYXR0cihcInRleHQtYW5jaG9yXCIsIFwibWlkZGxlXCIpLnN0eWxlKFwiZm9udC13ZWlnaHRcIiwgXCJib2xkXCIpLnRleHQoXCJDb21wYXJhdGl2YSBkZSBjb3JyZWxhY2nDs24gMCB5IGxhIGNvcnJlbGFjacOzbiBlbGVnaWRhXCIpO1xuXG4gIC8vIDEuIFBERiBGaWphIHkgVmFyaWFibGVcbiAgc3ZnLmFwcGVuZChcInBhdGhcIikuZGF0dW0oZGF0YV9yYW5nZSkuYXR0cihcImZpbGxcIiwgXCJub25lXCIpLmF0dHIoXCJzdHJva2VcIiwgXCJncmF5XCIpLmF0dHIoXCJzdHJva2UtZGFzaGFycmF5XCIsIFwiNCw0XCIpLmF0dHIoXCJkXCIsIGQzLmxpbmUoKS54KGQgPT4geChkKSkueShkID0+IHkocGRmKGQsIG11LCBzaWdtYV9maXhlZCkpKSk7XG4gIHN2Zy5hcHBlbmQoXCJwYXRoXCIpLmRhdHVtKGRhdGFfcmFuZ2UpLmF0dHIoXCJmaWxsXCIsIFwibm9uZVwiKS5hdHRyKFwic3Ryb2tlXCIsIFwicmdiKDQ0LCAxMzMsIDIzNSlcIikuYXR0cihcInN0cm9rZS13aWR0aFwiLCAyKS5hdHRyKFwiZFwiLCBkMy5saW5lKCkueChkID0+IHgoZCkpLnkoZCA9PiB5KHBkZihkLCBtdSwgc2lnbWFfZHluYW1pYykpKSk7XG5cbiAgLy8gMi4gQ29udGVuZWRvcmVzIHBhcmEgw6FyZWFzIChjb2xhIGRlcmVjaGEgWCA+IGspXG4gIGNvbnN0IHNoYWRlX2ZpeGVkX2NvbG9yID0gXCJyZ2JhKDEyOCwgMTI4LCAxMjgsIDAuMjUpXCJcbiAgY29uc3Qgc2hhZGVfZml4ZWQgPSBzdmcuYXBwZW5kKFwicGF0aFwiKS5hdHRyKFwiZmlsbFwiLCBzaGFkZV9maXhlZF9jb2xvcik7XG4gIGNvbnN0IHNoYWRlX2R5bmFtaWNfY29sb3IgPSBcInJnYmEoNDQsIDEzMywgMjM1LCAwLjI1KVwiO1xuICBjb25zdCBzaGFkZV9keW5hbWljID0gc3ZnLmFwcGVuZChcInBhdGhcIikuYXR0cihcImZpbGxcIiwgc2hhZGVfZHluYW1pY19jb2xvcik7XG5cbiAgLy8gLS0tIE5VRVZBIExFWUVOREEgREUgUFJPQkFCSUxJREFERVMgKFggPiBrKSAtLS1cbiAgY29uc3QgbGVnZW5kX3hfbGVmdCA9IHdpZHRoIC0gbWFyZ2luLnJpZ2h0IC0gMTQwO1xuICBjb25zdCBsZWdlbmRfeV90b3AgPSAoaGVpZ2h0IC0gbWFyZ2luLmJvdHRvbSkvMiAgLSAzNTtcblxuICBzdmcuYXBwZW5kKFwicmVjdFwiKVxuICAgIC5hdHRyKFwieFwiLCBsZWdlbmRfeF9sZWZ0KSAgICAgIC8vIFBvc2ljacOzbiBob3Jpem9udGFsXG4gICAgLmF0dHIoXCJ5XCIsIGxlZ2VuZF95X3RvcC0xMykgICAgICAvLyBQb3NpY2nDs24gdmVydGljYWxcbiAgICAuYXR0cihcIndpZHRoXCIsIDEzKSAgLy8gQW5jaG9cbiAgICAuYXR0cihcImhlaWdodFwiLCAxMykgLy8gQWx0b1xuICAgIC5zdHlsZShcImZpbGxcIiwgc2hhZGVfZml4ZWRfY29sb3IpO1xuICBjb25zdCBsZWdlbmRfZml4ZWQgPSBzdmcuYXBwZW5kKFwidGV4dFwiKVxuICAgIC5hdHRyKFwieFwiLCBsZWdlbmRfeF9sZWZ0ICsgMjApXG4gICAgLmF0dHIoXCJ5XCIsIGxlZ2VuZF95X3RvcClcbiAgICAvLy5hdHRyKFwiZmlsbFwiLCBcImdyYXlcIilcbiAgICAuc3R5bGUoXCJmb250LXNpemVcIiwgXCIxM3B4XCIpXG4gICAgLnN0eWxlKFwiZm9udC13ZWlnaHRcIiwgXCI1MDBcIik7XG5cbiAgc3ZnLmFwcGVuZChcInJlY3RcIilcbiAgICAuYXR0cihcInhcIiwgbGVnZW5kX3hfbGVmdCkgICAgICAvLyBQb3NpY2nDs24gaG9yaXpvbnRhbFxuICAgIC5hdHRyKFwieVwiLCBsZWdlbmRfeV90b3AgLTEzICsgMjApICAgICAgLy8gUG9zaWNpw7NuIHZlcnRpY2FsXG4gICAgLmF0dHIoXCJ3aWR0aFwiLCAxMykgIC8vIEFuY2hvXG4gICAgLmF0dHIoXCJoZWlnaHRcIiwgMTMpIC8vIEFsdG9cbiAgICAuc3R5bGUoXCJmaWxsXCIsIHNoYWRlX2R5bmFtaWNfY29sb3IpO1xuICBjb25zdCBsZWdlbmRfZHluYW1pYyA9IHN2Zy5hcHBlbmQoXCJ0ZXh0XCIpXG4gICAgLmF0dHIoXCJ4XCIsIGxlZ2VuZF94X2xlZnQgKyAyMClcbiAgICAuYXR0cihcInlcIiwgbGVnZW5kX3lfdG9wICsgMjApXG4gICAgLy8uYXR0cihcImZpbGxcIiwgXCJibHVlXCIpXG4gICAgLnN0eWxlKFwiZm9udC1zaXplXCIsIFwiMTNweFwiKVxuICAgIC5zdHlsZShcImZvbnQtd2VpZ2h0XCIsIFwiNTAwXCIpO1xuXG4gIC8vIC0tLSBMw5NHSUNBIERFIEFDVFVBTElaQUNJw5NOIC0tLVxuICBmdW5jdGlvbiB1cGRhdGUodmFsX3VtYnJhbCl7XG4gICAgY29uc3QgcmFuZ2Vfc2hhZGUgPSBkMy5yYW5nZSh2YWxfdW1icmFsLCB4X2RvbWFpblsxXSwgMC4xKTtcbiAgICBcbiAgICAvLyBBY3R1YWxpemFyIMOhcmVhcyBzb21icmVhZGFzXG4gICAgc2hhZGVfZml4ZWQuZGF0dW0ocmFuZ2Vfc2hhZGUpLmF0dHIoXCJkXCIsIGQzLmFyZWEoKS54KGQgPT4geChkKSkueTAoeSgwKSkueTEoZCA9PiB5KHBkZihkLCBtdSwgc2lnbWFfZml4ZWQpKSkpO1xuICAgIHNoYWRlX2R5bmFtaWMuZGF0dW0ocmFuZ2Vfc2hhZGUpLmF0dHIoXCJkXCIsIGQzLmFyZWEoKS54KGQgPT4geChkKSkueTAoeSgwKSkueTEoZCA9PiB5KHBkZihkLCBtdSwgc2lnbWFfZHluYW1pYykpKSk7XG4gICAgXG4gICAgLy8gQWN0dWFsaXphciBwb3NpY2nDs24gZGUgbGEgbMOtbmVhIHJvamEgeSBldGlxdWV0YSBrXG4gICAgaGFuZGxlLmF0dHIoXCJ0cmFuc2Zvcm1cIiwgYHRyYW5zbGF0ZSgke3godmFsX3VtYnJhbCl9LDApYCk7XG4gICAgbGFiZWwudGV4dChgdCA9ICR7dmFsX3VtYnJhbC50b0ZpeGVkKDEpfWApO1xuXG4gICAgLy8gLS0tIEFDVFVBTElaQVIgTEVZRU5EQSAoQ2FsY3VsYW5kbyBQKFggPCBrKSkgLS0tXG4gICAgY29uc3QgcF9maXhlZCA9IDEtanN0YXQubm9ybWFsLmNkZih2YWxfdW1icmFsLCBtdSwgc2lnbWFfZml4ZWQpO1xuICAgIGNvbnN0IHBfZHluYW1pYyA9IDEtanN0YXQubm9ybWFsLmNkZih2YWxfdW1icmFsLCBtdSwgc2lnbWFfZHluYW1pYyk7XG5cbiAgICBsZWdlbmRfZml4ZWQudGV4dChgJHtwX2ZpeGVkLnRvRml4ZWQoNCl9YCk7XG4gICAgbGVnZW5kX2R5bmFtaWMudGV4dChgJHtwX2R5bmFtaWMudG9GaXhlZCg0KX1gKTtcbiAgICBcbiAgICAvLyBFbWl0aXIgdmFsb3IgYWwgZG9jdW1lbnRvXG4gICAgc3ZnLm5vZGUoKS52YWx1ZSA9IHZhbF91bWJyYWw7XG4gICAgc3ZnLm5vZGUoKS5kaXNwYXRjaEV2ZW50KG5ldyBDdXN0b21FdmVudChcImlucHV0XCIpKTtcbiAgfVxuXG4gIC8vIC0tLSBDT01QT05FTlRFIEFSUkFTVFJBQkxFIC0tLVxuICBsZXQgY3VycmVudF91bWJyYWwgPSA1MC4wO1xuICBjb25zdCBkcmFnID0gZDMuZHJhZygpLm9uKFwiZHJhZ1wiLCAoZXZlbnQpID0+IHtcbiAgICBjb25zdCByYXdYID0geC5pbnZlcnQoZXZlbnQueCk7XG4gICAgY3VycmVudF91bWJyYWwgPSBNYXRoLm1heCh4X2RvbWFpblswXSwgTWF0aC5taW4oeF9kb21haW5bMV0sIHJhd1gpKTtcbiAgICB1cGRhdGUoY3VycmVudF91bWJyYWwpO1xuICB9KTtcblxuICBjb25zdCBoYW5kbGVfY29sb3IgPSBcInJnYmEoMjQzLCAxMzMsIDExMCwgMSlcIjtcbiAgY29uc3QgaGFuZGxlID0gc3ZnLmFwcGVuZChcImdcIikuYXR0cihcImN1cnNvclwiLCBcImV3LXJlc2l6ZVwiKS5jYWxsKGRyYWcpO1xuICBoYW5kbGUuYXBwZW5kKFwibGluZVwiKS5hdHRyKFwieTFcIiwgbWFyZ2luLnRvcCArIDIwKS5hdHRyKFwieTJcIiwgaGVpZ2h0IC0gbWFyZ2luLmJvdHRvbSkuYXR0cihcInN0cm9rZVwiLCBoYW5kbGVfY29sb3IpLmF0dHIoXCJzdHJva2Utd2lkdGhcIiwgMik7XG4gIGhhbmRsZS5hcHBlbmQoXCJyZWN0XCIpLmF0dHIoXCJ4XCIsIC0xMCkuYXR0cihcInlcIiwgbWFyZ2luLnRvcCkuYXR0cihcIndpZHRoXCIsIDIwKS5hdHRyKFwiaGVpZ2h0XCIsIGhlaWdodCAtIG1hcmdpbi50b3AgLSBtYXJnaW4uYm90dG9tKS5hdHRyKFwiZmlsbFwiLCBcInRyYW5zcGFyZW50XCIpO1xuICBjb25zdCBsYWJlbCA9IGhhbmRsZS5hcHBlbmQoXCJ0ZXh0XCIpLmF0dHIoXCJ5XCIsIG1hcmdpbi50b3AgKyAxMCkuYXR0cihcInRleHQtYW5jaG9yXCIsIFwibWlkZGxlXCIpLmF0dHIoXCJmaWxsXCIsIGhhbmRsZV9jb2xvcikuc3R5bGUoXCJmb250LXNpemVcIiwgXCIxMnB4XCIpLnN0eWxlKFwiZm9udC13ZWlnaHRcIiwgXCJib2xkXCIpO1xuXG4gIHVwZGF0ZShjdXJyZW50X3VtYnJhbCk7XG4gIHJldHVybiBzdmcubm9kZSgpO1xufVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC00IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIHJob19BX0JfZHluYW1pYyA9IElucHV0cy5yYW5nZShbLTAuNSwxXSwge3ZhbHVlOiAwLCBzdGVwOiAwLjEsIGxhYmVsOiBcIkNvcnJlbGFjacOzbiBlbnRyZSBBIHkgQlwifSlcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiB1bWJyYWxBQiA9IHtcbiAgLy8gLS0tIENPTkZJR1VSQUNJw5NOIERFTCBMSUVOWk8gLS0tXG4gIGNvbnN0IHdpZHRoID0gNzAwO1xuICBjb25zdCBoZWlnaHQgPSA0MDA7XG4gIGNvbnN0IG1hcmdpbiA9IHt0b3A6IDQwLCByaWdodDogMzAsIGJvdHRvbTogNDAsIGxlZnQ6IDUwfTsgXG4gIFxuICAvLyBQYXLDoW1ldHJvcyBlc3RhZMOtc3RpY29zXG4gIGNvbnN0IG11ID0gNDtcbiAgY29uc3Qgc2lnbWFfZml4ZWQgPSA4O1xuICBjb25zdCBzaWdtYV9keW5hbWljID0gKCAzMiooMSArIHJob19BX0JfZHluYW1pYykpKiowLjU7XG4gIGNvbnN0IHhfbWluID0gLTg7XG4gIGNvbnN0IHhfbWF4ID0gMTY7XG4gIGNvbnN0IHhfZG9tYWluID0gW3hfbWluLCB4X21heF07XG4gIGNvbnN0IHlfbWF4ID0gMC4xMjtcbiAgY29uc3QgeV9kb21haW4gPSBbMCwgeV9tYXhdO1xuXG4gIC8vIEVzY2FsYXMgZGUgRDNcbiAgY29uc3QgeCA9IGQzLnNjYWxlTGluZWFyKCkuZG9tYWluKHhfZG9tYWluKS5yYW5nZShbbWFyZ2luLmxlZnQsIHdpZHRoIC0gbWFyZ2luLnJpZ2h0XSk7XG4gIGNvbnN0IHkgPSBkMy5zY2FsZUxpbmVhcigpLmRvbWFpbih5X2RvbWFpbikucmFuZ2UoW2hlaWdodCAtIG1hcmdpbi5ib3R0b20sIG1hcmdpbi50b3BdKTtcblxuICAvLyBGdW5jaW9uZXMgTWF0ZW3DoXRpY2FzXG4gIGNvbnN0IHBkZiA9ICh2YWwsIG0sIHMpID0+ICgxIC8gKHMgKiBNYXRoLnNxcnQoMiAqIE1hdGguUEkpKSkgKiBNYXRoLmV4cCgtMC41ICogTWF0aC5wb3coKHZhbCAtIG0pIC8gcywgMikpO1xuICBjb25zdCBkYXRhX3JhbmdlID0gZDMucmFuZ2UoeF9kb21haW5bMF0sIHhfZG9tYWluWzFdLCAwLjEpO1xuXG4gIC8vIC0tLSBDUkVBQ0nDk04gREVMIFNWRyAtLS1cbiAgICBjb25zdCBzdmcgPSBkMy5jcmVhdGUoXCJzdmdcIikuYXR0cihcInZpZXdCb3hcIiwgWzAsIDAsIHdpZHRoLCBoZWlnaHRdKS5zdHlsZShcImJhY2tncm91bmRcIiwgXCJ3aGl0ZVwiKS5zdHlsZShcImJvcmRlclwiLCBcIjFweCBzb2xpZCAjZWVlXCIpO1xuXG4gIC8vIEVqZXNcbiAgc3ZnLmFwcGVuZChcImdcIikuYXR0cihcInRyYW5zZm9ybVwiLCBgdHJhbnNsYXRlKDAsJHtoZWlnaHQgLSBtYXJnaW4uYm90dG9tfSlgKS5jYWxsKGQzLmF4aXNCb3R0b20oeCkpO1xuICBzdmcuYXBwZW5kKFwiZ1wiKS5hdHRyKFwidHJhbnNmb3JtXCIsIGB0cmFuc2xhdGUoJHttYXJnaW4ubGVmdH0sMClgKS5jYWxsKGQzLmF4aXNMZWZ0KHkpKTtcblxuICAvLyBUw610dWxvXG4gIHN2Zy5hcHBlbmQoXCJ0ZXh0XCIpLmF0dHIoXCJ4XCIsIHdpZHRoLzIpLmF0dHIoXCJ5XCIsIDI1KS5hdHRyKFwidGV4dC1hbmNob3JcIiwgXCJtaWRkbGVcIikuc3R5bGUoXCJmb250LXdlaWdodFwiLCBcImJvbGRcIikudGV4dChcIkNvbXBhcmF0aXZhIGRlIHByaW1lcmEgeSBzZWd1bmRhIG9wY2nDs25cIik7XG5cbiAgLy8gMS4gUERGIEZpamEgeSBWYXJpYWJsZVxuICBzdmcuYXBwZW5kKFwicGF0aFwiKS5kYXR1bShkYXRhX3JhbmdlKS5hdHRyKFwiZmlsbFwiLCBcIm5vbmVcIikuYXR0cihcInN0cm9rZVwiLCBcImdyYXlcIikuYXR0cihcInN0cm9rZS1kYXNoYXJyYXlcIiwgXCI0LDRcIikuYXR0cihcImRcIiwgZDMubGluZSgpLngoZCA9PiB4KGQpKS55KGQgPT4geShwZGYoZCwgbXUsIHNpZ21hX2ZpeGVkKSkpKTtcbiAgc3ZnLmFwcGVuZChcInBhdGhcIikuZGF0dW0oZGF0YV9yYW5nZSkuYXR0cihcImZpbGxcIiwgXCJub25lXCIpLmF0dHIoXCJzdHJva2VcIiwgXCJyZ2IoNDQsIDEzMywgMjM1KVwiKS5hdHRyKFwic3Ryb2tlLXdpZHRoXCIsIDIpLmF0dHIoXCJkXCIsIGQzLmxpbmUoKS54KGQgPT4geChkKSkueShkID0+IHkocGRmKGQsIG11LCBzaWdtYV9keW5hbWljKSkpKTtcblxuICAvLyAyLiBDb250ZW5lZG9yZXMgcGFyYSDDoXJlYXMgKGNvbGEgZGVyZWNoYSBYID4gaylcbiAgY29uc3Qgc2hhZGVfZml4ZWRfY29sb3IgPSBcInJnYmEoMTI4LCAxMjgsIDEyOCwgMC4yNSlcIlxuICBjb25zdCBzaGFkZV9maXhlZCA9IHN2Zy5hcHBlbmQoXCJwYXRoXCIpLmF0dHIoXCJmaWxsXCIsIHNoYWRlX2ZpeGVkX2NvbG9yKTtcbiAgY29uc3Qgc2hhZGVfZHluYW1pY19jb2xvciA9IFwicmdiYSg0NCwgMTMzLCAyMzUsIDAuMjUpXCI7XG4gIGNvbnN0IHNoYWRlX2R5bmFtaWMgPSBzdmcuYXBwZW5kKFwicGF0aFwiKS5hdHRyKFwiZmlsbFwiLCBzaGFkZV9keW5hbWljX2NvbG9yKTtcblxuICAvLyAtLS0gTlVFVkEgTEVZRU5EQSBERSBQUk9CQUJJTElEQURFUyAoWCA+IGspIC0tLVxuICBjb25zdCBsZWdlbmRfeF9sZWZ0ID0gd2lkdGggLSBtYXJnaW4ucmlnaHQgLSAxNDA7XG4gIGNvbnN0IGxlZ2VuZF95X3RvcCA9IChoZWlnaHQgLSBtYXJnaW4uYm90dG9tKS8yICAtIDM1O1xuXG4gIHN2Zy5hcHBlbmQoXCJyZWN0XCIpXG4gICAgLmF0dHIoXCJ4XCIsIGxlZ2VuZF94X2xlZnQpICAgICAgLy8gUG9zaWNpw7NuIGhvcml6b250YWxcbiAgICAuYXR0cihcInlcIiwgbGVnZW5kX3lfdG9wLTEzKSAgICAgIC8vIFBvc2ljacOzbiB2ZXJ0aWNhbFxuICAgIC5hdHRyKFwid2lkdGhcIiwgMTMpICAvLyBBbmNob1xuICAgIC5hdHRyKFwiaGVpZ2h0XCIsIDEzKSAvLyBBbHRvXG4gICAgLnN0eWxlKFwiZmlsbFwiLCBzaGFkZV9maXhlZF9jb2xvcik7XG4gIGNvbnN0IGxlZ2VuZF9maXhlZCA9IHN2Zy5hcHBlbmQoXCJ0ZXh0XCIpXG4gICAgLmF0dHIoXCJ4XCIsIGxlZ2VuZF94X2xlZnQgKyAyMClcbiAgICAuYXR0cihcInlcIiwgbGVnZW5kX3lfdG9wKVxuICAgIC8vLmF0dHIoXCJmaWxsXCIsIFwiZ3JheVwiKVxuICAgIC5zdHlsZShcImZvbnQtc2l6ZVwiLCBcIjEzcHhcIilcbiAgICAuc3R5bGUoXCJmb250LXdlaWdodFwiLCBcIjUwMFwiKTtcblxuICBzdmcuYXBwZW5kKFwicmVjdFwiKVxuICAgIC5hdHRyKFwieFwiLCBsZWdlbmRfeF9sZWZ0KSAgICAgIC8vIFBvc2ljacOzbiBob3Jpem9udGFsXG4gICAgLmF0dHIoXCJ5XCIsIGxlZ2VuZF95X3RvcCAtMTMgKyAyMCkgICAgICAvLyBQb3NpY2nDs24gdmVydGljYWxcbiAgICAuYXR0cihcIndpZHRoXCIsIDEzKSAgLy8gQW5jaG9cbiAgICAuYXR0cihcImhlaWdodFwiLCAxMykgLy8gQWx0b1xuICAgIC5zdHlsZShcImZpbGxcIiwgc2hhZGVfZHluYW1pY19jb2xvcik7XG4gIGNvbnN0IGxlZ2VuZF9keW5hbWljID0gc3ZnLmFwcGVuZChcInRleHRcIilcbiAgICAuYXR0cihcInhcIiwgbGVnZW5kX3hfbGVmdCArIDIwKVxuICAgIC5hdHRyKFwieVwiLCBsZWdlbmRfeV90b3AgKyAyMClcbiAgICAvLy5hdHRyKFwiZmlsbFwiLCBcImJsdWVcIilcbiAgICAuc3R5bGUoXCJmb250LXNpemVcIiwgXCIxM3B4XCIpXG4gICAgLnN0eWxlKFwiZm9udC13ZWlnaHRcIiwgXCI1MDBcIik7XG5cbiAgLy8gLS0tIEzDk0dJQ0EgREUgQUNUVUFMSVpBQ0nDk04gLS0tXG4gIGZ1bmN0aW9uIHVwZGF0ZSh2YWxfdW1icmFsKXtcbiAgICBjb25zdCByYW5nZV9zaGFkZSA9IGQzLnJhbmdlKCB4X2RvbWFpblswXSwgdmFsX3VtYnJhbCwwLjEpO1xuICAgIFxuICAgIC8vIEFjdHVhbGl6YXIgw6FyZWFzIHNvbWJyZWFkYXNcbiAgICBzaGFkZV9maXhlZC5kYXR1bShyYW5nZV9zaGFkZSkuYXR0cihcImRcIiwgZDMuYXJlYSgpLngoZCA9PiB4KGQpKS55MCh5KDApKS55MShkID0+IHkocGRmKGQsIG11LCBzaWdtYV9maXhlZCkpKSk7XG4gICAgc2hhZGVfZHluYW1pYy5kYXR1bShyYW5nZV9zaGFkZSkuYXR0cihcImRcIiwgZDMuYXJlYSgpLngoZCA9PiB4KGQpKS55MCh5KDApKS55MShkID0+IHkocGRmKGQsIG11LCBzaWdtYV9keW5hbWljKSkpKTtcbiAgICBcbiAgICAvLyBBY3R1YWxpemFyIHBvc2ljacOzbiBkZSBsYSBsw61uZWEgcm9qYSB5IGV0aXF1ZXRhIGtcbiAgICBoYW5kbGUuYXR0cihcInRyYW5zZm9ybVwiLCBgdHJhbnNsYXRlKCR7eCh2YWxfdW1icmFsKX0sMClgKTtcbiAgICBsYWJlbC50ZXh0KGByID0gJHt2YWxfdW1icmFsLnRvRml4ZWQoMSl9YCk7XG5cbiAgICAvLyAtLS0gQUNUVUFMSVpBUiBMRVlFTkRBIChDYWxjdWxhbmRvIFAoWCA8IGspKSAtLS1cbiAgICBjb25zdCBwX2ZpeGVkID0ganN0YXQubm9ybWFsLmNkZih2YWxfdW1icmFsLCBtdSwgc2lnbWFfZml4ZWQpO1xuICAgIGNvbnN0IHBfZHluYW1pYyA9IGpzdGF0Lm5vcm1hbC5jZGYodmFsX3VtYnJhbCwgbXUsIHNpZ21hX2R5bmFtaWMpO1xuXG4gICAgbGVnZW5kX2ZpeGVkLnRleHQoYCR7cF9maXhlZC50b0ZpeGVkKDQpfWApO1xuICAgIGxlZ2VuZF9keW5hbWljLnRleHQoYCR7cF9keW5hbWljLnRvRml4ZWQoNCl9YCk7XG4gICAgXG4gICAgLy8gRW1pdGlyIHZhbG9yIGFsIGRvY3VtZW50b1xuICAgIHN2Zy5ub2RlKCkudmFsdWUgPSB2YWxfdW1icmFsO1xuICAgIHN2Zy5ub2RlKCkuZGlzcGF0Y2hFdmVudChuZXcgQ3VzdG9tRXZlbnQoXCJpbnB1dFwiKSk7XG4gIH1cblxuICAvLyAtLS0gQ09NUE9ORU5URSBBUlJBU1RSQUJMRSAtLS1cbiAgbGV0IGN1cnJlbnRfdW1icmFsID0gMDtcbiAgY29uc3QgZHJhZyA9IGQzLmRyYWcoKS5vbihcImRyYWdcIiwgKGV2ZW50KSA9PiB7XG4gICAgY29uc3QgcmF3WCA9IHguaW52ZXJ0KGV2ZW50LngpO1xuICAgIGN1cnJlbnRfdW1icmFsID0gTWF0aC5tYXgoeF9kb21haW5bMF0scmF3WCk7XG4gICAgdXBkYXRlKGN1cnJlbnRfdW1icmFsKTtcbiAgfSk7XG5cbiAgY29uc3QgaGFuZGxlX2NvbG9yID0gXCJyZ2JhKDI0MywgMTMzLCAxMTAsIDEpXCI7XG4gIGNvbnN0IGhhbmRsZSA9IHN2Zy5hcHBlbmQoXCJnXCIpLmF0dHIoXCJjdXJzb3JcIiwgXCJldy1yZXNpemVcIikuY2FsbChkcmFnKTtcbiAgaGFuZGxlLmFwcGVuZChcImxpbmVcIikuYXR0cihcInkxXCIsIG1hcmdpbi50b3AgKyAyMCkuYXR0cihcInkyXCIsIGhlaWdodCAtIG1hcmdpbi5ib3R0b20pLmF0dHIoXCJzdHJva2VcIiwgaGFuZGxlX2NvbG9yKS5hdHRyKFwic3Ryb2tlLXdpZHRoXCIsIDIpO1xuICBoYW5kbGUuYXBwZW5kKFwicmVjdFwiKS5hdHRyKFwieFwiLCAtMTApLmF0dHIoXCJ5XCIsIG1hcmdpbi50b3ApLmF0dHIoXCJ3aWR0aFwiLCAyMCkuYXR0cihcImhlaWdodFwiLCBoZWlnaHQgLSBtYXJnaW4udG9wIC0gbWFyZ2luLmJvdHRvbSkuYXR0cihcImZpbGxcIiwgXCJ0cmFuc3BhcmVudFwiKTtcbiAgY29uc3QgbGFiZWwgPSBoYW5kbGUuYXBwZW5kKFwidGV4dFwiKS5hdHRyKFwieVwiLCBtYXJnaW4udG9wICsgMTApLmF0dHIoXCJ0ZXh0LWFuY2hvclwiLCBcIm1pZGRsZVwiKS5hdHRyKFwiZmlsbFwiLCBoYW5kbGVfY29sb3IpLnN0eWxlKFwiZm9udC1zaXplXCIsIFwiMTJweFwiKS5zdHlsZShcImZvbnQtd2VpZ2h0XCIsIFwiYm9sZFwiKTtcblxuICB1cGRhdGUoY3VycmVudF91bWJyYWwpO1xuICByZXR1cm4gc3ZnLm5vZGUoKTtcbn1cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiByaG9fQV9DX2R5bmFtaWMgPSBJbnB1dHMucmFuZ2UoWy0xLDFdLCB7dmFsdWU6IDAuMywgc3RlcDogMC4xLCBsYWJlbDogXCJDb3JyZWxhY2nDs24gZW50cmUgQSB5IENcIn0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTciLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJ2aWV3b2YgdW1icmFsQUMgPSB7XG4gIC8vIC0tLSBDT05GSUdVUkFDScOTTiBERUwgTElFTlpPIC0tLVxuICBjb25zdCB3aWR0aCA9IDcwMDtcbiAgY29uc3QgaGVpZ2h0ID0gNDAwO1xuICBjb25zdCBtYXJnaW4gPSB7dG9wOiA0MCwgcmlnaHQ6IDMwLCBib3R0b206IDQwLCBsZWZ0OiA1MH07IFxuICBcbiAgLy8gUGFyw6FtZXRyb3MgZXN0YWTDrXN0aWNvc1xuICBjb25zdCBtdSA9IDg7XG4gIGNvbnN0IHNpZ21hX2ZpeGVkID0gMTQwKiowLjU7XG4gIGNvbnN0IHNpZ21hX2R5bmFtaWMgPSAoIDQqKDI5ICsgMjAqcmhvX0FfQ19keW5hbWljKSkqKjAuNTtcbiAgY29uc3QgeF9taW4gPSAtMTI7XG4gIGNvbnN0IHhfbWF4ID0gMjg7XG4gIGNvbnN0IHhfZG9tYWluID0gW3hfbWluLCB4X21heF07XG4gIGNvbnN0IHlfbWF4ID0gMC4wNztcbiAgY29uc3QgeV9kb21haW4gPSBbMCwgeV9tYXhdO1xuXG4gIC8vIEVzY2FsYXMgZGUgRDNcbiAgY29uc3QgeCA9IGQzLnNjYWxlTGluZWFyKCkuZG9tYWluKHhfZG9tYWluKS5yYW5nZShbbWFyZ2luLmxlZnQsIHdpZHRoIC0gbWFyZ2luLnJpZ2h0XSk7XG4gIGNvbnN0IHkgPSBkMy5zY2FsZUxpbmVhcigpLmRvbWFpbih5X2RvbWFpbikucmFuZ2UoW2hlaWdodCAtIG1hcmdpbi5ib3R0b20sIG1hcmdpbi50b3BdKTtcblxuICAvLyBGdW5jaW9uZXMgTWF0ZW3DoXRpY2FzXG4gIGNvbnN0IHBkZiA9ICh2YWwsIG0sIHMpID0+ICgxIC8gKHMgKiBNYXRoLnNxcnQoMiAqIE1hdGguUEkpKSkgKiBNYXRoLmV4cCgtMC41ICogTWF0aC5wb3coKHZhbCAtIG0pIC8gcywgMikpO1xuICBjb25zdCBkYXRhX3JhbmdlID0gZDMucmFuZ2UoeF9kb21haW5bMF0sIHhfZG9tYWluWzFdLCAwLjEpO1xuXG4gIC8vIC0tLSBDUkVBQ0nDk04gREVMIFNWRyAtLS1cbiAgICBjb25zdCBzdmcgPSBkMy5jcmVhdGUoXCJzdmdcIikuYXR0cihcInZpZXdCb3hcIiwgWzAsIDAsIHdpZHRoLCBoZWlnaHRdKS5zdHlsZShcImJhY2tncm91bmRcIiwgXCJ3aGl0ZVwiKS5zdHlsZShcImJvcmRlclwiLCBcIjFweCBzb2xpZCAjZWVlXCIpO1xuXG4gIC8vIEVqZXNcbiAgc3ZnLmFwcGVuZChcImdcIikuYXR0cihcInRyYW5zZm9ybVwiLCBgdHJhbnNsYXRlKDAsJHtoZWlnaHQgLSBtYXJnaW4uYm90dG9tfSlgKS5jYWxsKGQzLmF4aXNCb3R0b20oeCkpO1xuICBzdmcuYXBwZW5kKFwiZ1wiKS5hdHRyKFwidHJhbnNmb3JtXCIsIGB0cmFuc2xhdGUoJHttYXJnaW4ubGVmdH0sMClgKS5jYWxsKGQzLmF4aXNMZWZ0KHkpKTtcblxuICAvLyBUw610dWxvXG4gIHN2Zy5hcHBlbmQoXCJ0ZXh0XCIpLmF0dHIoXCJ4XCIsIHdpZHRoLzIpLmF0dHIoXCJ5XCIsIDI1KS5hdHRyKFwidGV4dC1hbmNob3JcIiwgXCJtaWRkbGVcIikuc3R5bGUoXCJmb250LXdlaWdodFwiLCBcImJvbGRcIikudGV4dChcIlRlcmNlcmEgb3BjacOzblwiKTtcblxuICAvLyAxLiBQREYgRmlqYSB5IFZhcmlhYmxlXG4gIHN2Zy5hcHBlbmQoXCJwYXRoXCIpLmRhdHVtKGRhdGFfcmFuZ2UpLmF0dHIoXCJmaWxsXCIsIFwibm9uZVwiKS5hdHRyKFwic3Ryb2tlXCIsIFwiZ3JheVwiKS5hdHRyKFwic3Ryb2tlLWRhc2hhcnJheVwiLCBcIjQsNFwiKS5hdHRyKFwiZFwiLCBkMy5saW5lKCkueChkID0+IHgoZCkpLnkoZCA9PiB5KHBkZihkLCBtdSwgc2lnbWFfZml4ZWQpKSkpO1xuICBzdmcuYXBwZW5kKFwicGF0aFwiKS5kYXR1bShkYXRhX3JhbmdlKS5hdHRyKFwiZmlsbFwiLCBcIm5vbmVcIikuYXR0cihcInN0cm9rZVwiLCBcInJnYig0NCwgMTMzLCAyMzUpXCIpLmF0dHIoXCJzdHJva2Utd2lkdGhcIiwgMikuYXR0cihcImRcIiwgZDMubGluZSgpLngoZCA9PiB4KGQpKS55KGQgPT4geShwZGYoZCwgbXUsIHNpZ21hX2R5bmFtaWMpKSkpO1xuXG4gIC8vIDIuIENvbnRlbmVkb3JlcyBwYXJhIMOhcmVhcyAoY29sYSBkZXJlY2hhIFggPiBrKVxuICBjb25zdCBzaGFkZV9maXhlZF9jb2xvciA9IFwicmdiYSgxMjgsIDEyOCwgMTI4LCAwLjI1KVwiXG4gIGNvbnN0IHNoYWRlX2ZpeGVkID0gc3ZnLmFwcGVuZChcInBhdGhcIikuYXR0cihcImZpbGxcIiwgc2hhZGVfZml4ZWRfY29sb3IpO1xuICBjb25zdCBzaGFkZV9keW5hbWljX2NvbG9yID0gXCJyZ2JhKDQ0LCAxMzMsIDIzNSwgMC4yNSlcIjtcbiAgY29uc3Qgc2hhZGVfZHluYW1pYyA9IHN2Zy5hcHBlbmQoXCJwYXRoXCIpLmF0dHIoXCJmaWxsXCIsIHNoYWRlX2R5bmFtaWNfY29sb3IpO1xuXG4gIC8vIC0tLSBOVUVWQSBMRVlFTkRBIERFIFBST0JBQklMSURBREVTIChYID4gaykgLS0tXG4gIGNvbnN0IGxlZ2VuZF94X2xlZnQgPSB3aWR0aCAtIG1hcmdpbi5yaWdodCAtIDE0MDtcbiAgY29uc3QgbGVnZW5kX3lfdG9wID0gKGhlaWdodCAtIG1hcmdpbi5ib3R0b20pLzIgIC0gMzU7XG5cbiAgc3ZnLmFwcGVuZChcInJlY3RcIilcbiAgICAuYXR0cihcInhcIiwgbGVnZW5kX3hfbGVmdCkgICAgICAvLyBQb3NpY2nDs24gaG9yaXpvbnRhbFxuICAgIC5hdHRyKFwieVwiLCBsZWdlbmRfeV90b3AtMTMpICAgICAgLy8gUG9zaWNpw7NuIHZlcnRpY2FsXG4gICAgLmF0dHIoXCJ3aWR0aFwiLCAxMykgIC8vIEFuY2hvXG4gICAgLmF0dHIoXCJoZWlnaHRcIiwgMTMpIC8vIEFsdG9cbiAgICAuc3R5bGUoXCJmaWxsXCIsIHNoYWRlX2ZpeGVkX2NvbG9yKTtcbiAgY29uc3QgbGVnZW5kX2ZpeGVkID0gc3ZnLmFwcGVuZChcInRleHRcIilcbiAgICAuYXR0cihcInhcIiwgbGVnZW5kX3hfbGVmdCArIDIwKVxuICAgIC5hdHRyKFwieVwiLCBsZWdlbmRfeV90b3ApXG4gICAgLy8uYXR0cihcImZpbGxcIiwgXCJncmF5XCIpXG4gICAgLnN0eWxlKFwiZm9udC1zaXplXCIsIFwiMTNweFwiKVxuICAgIC5zdHlsZShcImZvbnQtd2VpZ2h0XCIsIFwiNTAwXCIpO1xuXG4gIHN2Zy5hcHBlbmQoXCJyZWN0XCIpXG4gICAgLmF0dHIoXCJ4XCIsIGxlZ2VuZF94X2xlZnQpICAgICAgLy8gUG9zaWNpw7NuIGhvcml6b250YWxcbiAgICAuYXR0cihcInlcIiwgbGVnZW5kX3lfdG9wIC0xMyArIDIwKSAgICAgIC8vIFBvc2ljacOzbiB2ZXJ0aWNhbFxuICAgIC5hdHRyKFwid2lkdGhcIiwgMTMpICAvLyBBbmNob1xuICAgIC5hdHRyKFwiaGVpZ2h0XCIsIDEzKSAvLyBBbHRvXG4gICAgLnN0eWxlKFwiZmlsbFwiLCBzaGFkZV9keW5hbWljX2NvbG9yKTtcbiAgY29uc3QgbGVnZW5kX2R5bmFtaWMgPSBzdmcuYXBwZW5kKFwidGV4dFwiKVxuICAgIC5hdHRyKFwieFwiLCBsZWdlbmRfeF9sZWZ0ICsgMjApXG4gICAgLmF0dHIoXCJ5XCIsIGxlZ2VuZF95X3RvcCArIDIwKVxuICAgIC8vLmF0dHIoXCJmaWxsXCIsIFwiYmx1ZVwiKVxuICAgIC5zdHlsZShcImZvbnQtc2l6ZVwiLCBcIjEzcHhcIilcbiAgICAuc3R5bGUoXCJmb250LXdlaWdodFwiLCBcIjUwMFwiKTtcblxuICAvLyAtLS0gTMOTR0lDQSBERSBBQ1RVQUxJWkFDScOTTiAtLS1cbiAgZnVuY3Rpb24gdXBkYXRlKHZhbF91bWJyYWwpe1xuICAgIGNvbnN0IHJhbmdlX3NoYWRlID0gZDMucmFuZ2UoIHhfZG9tYWluWzBdLCB2YWxfdW1icmFsLDAuMSk7XG4gICAgXG4gICAgLy8gQWN0dWFsaXphciDDoXJlYXMgc29tYnJlYWRhc1xuICAgIHNoYWRlX2ZpeGVkLmRhdHVtKHJhbmdlX3NoYWRlKS5hdHRyKFwiZFwiLCBkMy5hcmVhKCkueChkID0+IHgoZCkpLnkwKHkoMCkpLnkxKGQgPT4geShwZGYoZCwgbXUsIHNpZ21hX2ZpeGVkKSkpKTtcbiAgICBzaGFkZV9keW5hbWljLmRhdHVtKHJhbmdlX3NoYWRlKS5hdHRyKFwiZFwiLCBkMy5hcmVhKCkueChkID0+IHgoZCkpLnkwKHkoMCkpLnkxKGQgPT4geShwZGYoZCwgbXUsIHNpZ21hX2R5bmFtaWMpKSkpO1xuICAgIFxuICAgIC8vIEFjdHVhbGl6YXIgcG9zaWNpw7NuIGRlIGxhIGzDrW5lYSByb2phIHkgZXRpcXVldGEga1xuICAgIGhhbmRsZS5hdHRyKFwidHJhbnNmb3JtXCIsIGB0cmFuc2xhdGUoJHt4KHZhbF91bWJyYWwpfSwwKWApO1xuICAgIGxhYmVsLnRleHQoYHIgPSAke3ZhbF91bWJyYWwudG9GaXhlZCgxKX1gKTtcblxuICAgIC8vIC0tLSBBQ1RVQUxJWkFSIExFWUVOREEgKENhbGN1bGFuZG8gUChYIDwgaykpIC0tLVxuICAgIGNvbnN0IHBfZml4ZWQgPSBqc3RhdC5ub3JtYWwuY2RmKHZhbF91bWJyYWwsIG11LCBzaWdtYV9maXhlZCk7XG4gICAgY29uc3QgcF9keW5hbWljID0ganN0YXQubm9ybWFsLmNkZih2YWxfdW1icmFsLCBtdSwgc2lnbWFfZHluYW1pYyk7XG5cbiAgICBsZWdlbmRfZml4ZWQudGV4dChgJHtwX2ZpeGVkLnRvRml4ZWQoNCl9YCk7XG4gICAgbGVnZW5kX2R5bmFtaWMudGV4dChgJHtwX2R5bmFtaWMudG9GaXhlZCg0KX1gKTtcbiAgICBcbiAgICAvLyBFbWl0aXIgdmFsb3IgYWwgZG9jdW1lbnRvXG4gICAgc3ZnLm5vZGUoKS52YWx1ZSA9IHZhbF91bWJyYWw7XG4gICAgc3ZnLm5vZGUoKS5kaXNwYXRjaEV2ZW50KG5ldyBDdXN0b21FdmVudChcImlucHV0XCIpKTtcbiAgfVxuXG4gIC8vIC0tLSBDT01QT05FTlRFIEFSUkFTVFJBQkxFIC0tLVxuICBsZXQgY3VycmVudF91bWJyYWwgPSAwO1xuICBjb25zdCBkcmFnID0gZDMuZHJhZygpLm9uKFwiZHJhZ1wiLCAoZXZlbnQpID0+IHtcbiAgICBjb25zdCByYXdYID0geC5pbnZlcnQoZXZlbnQueCk7XG4gICAgY3VycmVudF91bWJyYWwgPSBNYXRoLm1heCh4X2RvbWFpblswXSxyYXdYKTtcbiAgICB1cGRhdGUoY3VycmVudF91bWJyYWwpO1xuICB9KTtcblxuICBjb25zdCBoYW5kbGVfY29sb3IgPSBcInJnYmEoMjQzLCAxMzMsIDExMCwgMSlcIjtcbiAgY29uc3QgaGFuZGxlID0gc3ZnLmFwcGVuZChcImdcIikuYXR0cihcImN1cnNvclwiLCBcImV3LXJlc2l6ZVwiKS5jYWxsKGRyYWcpO1xuICBoYW5kbGUuYXBwZW5kKFwibGluZVwiKS5hdHRyKFwieTFcIiwgbWFyZ2luLnRvcCArIDIwKS5hdHRyKFwieTJcIiwgaGVpZ2h0IC0gbWFyZ2luLmJvdHRvbSkuYXR0cihcInN0cm9rZVwiLCBoYW5kbGVfY29sb3IpLmF0dHIoXCJzdHJva2Utd2lkdGhcIiwgMik7XG4gIGhhbmRsZS5hcHBlbmQoXCJyZWN0XCIpLmF0dHIoXCJ4XCIsIC0xMCkuYXR0cihcInlcIiwgbWFyZ2luLnRvcCkuYXR0cihcIndpZHRoXCIsIDIwKS5hdHRyKFwiaGVpZ2h0XCIsIGhlaWdodCAtIG1hcmdpbi50b3AgLSBtYXJnaW4uYm90dG9tKS5hdHRyKFwiZmlsbFwiLCBcInRyYW5zcGFyZW50XCIpO1xuICBjb25zdCBsYWJlbCA9IGhhbmRsZS5hcHBlbmQoXCJ0ZXh0XCIpLmF0dHIoXCJ5XCIsIG1hcmdpbi50b3AgKyAxMCkuYXR0cihcInRleHQtYW5jaG9yXCIsIFwibWlkZGxlXCIpLmF0dHIoXCJmaWxsXCIsIGhhbmRsZV9jb2xvcikuc3R5bGUoXCJmb250LXNpemVcIiwgXCIxMnB4XCIpLnN0eWxlKFwiZm9udC13ZWlnaHRcIiwgXCJib2xkXCIpO1xuXG4gIHVwZGF0ZShjdXJyZW50X3VtYnJhbCk7XG4gIHJldHVybiBzdmcubm9kZSgpO1xufVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdyaG9fZHluYW1pYycpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCd1bWJyYWwnKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgncmhvX0FfQl9keW5hbWljJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3VtYnJhbEFCJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3Job19BX0NfZHluYW1pYycpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCd1bWJyYWxBQycpIn1dfQ==
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../../..";
+window._ojs.paths.runtimeToRoot = "../../..";
+window._ojs.paths.docToRoot = "";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
