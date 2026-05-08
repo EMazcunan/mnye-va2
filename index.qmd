@@ -1,5 +1,4 @@
-<!-- https://gemini.google.com/gem/98767edddd13/85b91813a40b391f -->
-En este documento encontrarás algunas visualizaciones que pueden resultarte útiles para interpretar los resultados de algunos problemas. 
+En este documento encontrarás algunas visualizaciones que pueden resultarte útiles para interpretar los resultados de algunos problemas de los apuntes. 
 
 ```{ojs}
 //| echo: false
@@ -11,10 +10,10 @@ jstat = require("jstat@1.9.6")
 
 La siguiente visualización permite comparar las probabilidades de que Ana llegue tarde para diferentes valores de la correlación entre $X$ e $Y$.
 
-La gráfica gris con línea discontinua se corresponde con el caso de correlación $0$ (apartado (a)) para referencia. 
+- La gráfica gris con línea discontinua se corresponde con el caso de correlación $0$, como en el apartado (a), y se mantendrá siempre fija como referencia. 
 
-La gráfica azul muestra inicialmente el caso de correlación $0.5$ (apartado (b)).
-Puedes utilizar el deslizador para modificarla.
+- La gráfica azul muestra inicialmente el caso de correlación $0.5$, como en el apartado (b).
+Puedes utilizar el deslizador para modificar el valor de la correlación y ver cómo cambiaría el resultado del apartado (b).
 
 
 ```{ojs}
@@ -146,14 +145,15 @@ viewof umbral = {
 
 ## Problema 20 (a)
 
+Las visualizaciones de este apartado permiten comparar las tres opciones que se pide evaluar en el apartado (a) del Problema 20.
+
 ### Comparativa de primera y segunda opción 
 
 La siguiente visualización permite comparar las rentabilidades de la primera opción y la segunda opción, para diferentes valores de la correlación entre la rentabilidades de $A$ y $B$.
 
-La gráfica gris con línea discontinua se corresponde con la primera opción. 
+- La gráfica gris con línea discontinua se corresponde con la primera opción (invertir todo en $A$). Se mantiene fija para facilitar la comparación.  
 
-La gráfica azul se corresponde con la segunda opción. Muestra inicialmente el caso de correlación $0$ (como en el enunciado).
-Puedes utilizar el deslizador para modificarla.
+- La gráfica azul se corresponde con la segunda opción (invertir $50\%$ en $A$ y $50\%$ en $B$). Muestra inicialmente el caso de correlación $0$, como en el enunciado del problema. Puedes utilizar el deslizador para investigar otros valores para la correlación (verás que sigue siendo ventajosa la diversificación incluso en el caso de correlación positiva).
 
 ```{ojs}
 //| echo: false
@@ -284,7 +284,7 @@ viewof umbralAB = {
 
 La siguiente visualización permite comparar la rentabilidad de la tercera opción para diferentes valores de la correlación entre la rentabilidades de $A$ y $C$.
 
-Muestra inicialmente el caso de correlación $0.3$ (como en el enunciado). Puedes utilizar el deslizador para modificarla. La gráfica azul se actualizará para la correlación elegida. Y se mantendrá fija la gráfica gris con línea discontinua para la correlación inicial $0.3$. 
+Muestra inicialmente el caso de correlación $0.3$, como en el enunciado del problema. Puedes utilizar el deslizador para jugar con otros valores para la correlación. La gráfica azul se actualizará para la correlación elegida. Y se mantendrá fija la gráfica gris con línea discontinua para la correlación inicial $0.3$. 
 
 
 ```{ojs}
